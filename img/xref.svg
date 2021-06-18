@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="22.141" height="32.166" viewBox="0, 0, 22.141, 32.166">
+  <g id="Legend" transform="translate(-637.565, -1394.944)">
+    <g id="Xref">
+      <path d="M637.565,1427.11 L637.565,1417.37 L645.547,1414.756 L659.706,1419.603 z" fill="#3EB1C8"/>
+      <path d="M651.724,1407.249 L637.565,1412.143 L645.547,1414.756 L659.706,1409.91 z" fill="#D8D2C4"/>
+      <path d="M645.547,1414.756 L659.706,1409.91 L659.706,1419.603 z" fill="#4F5858"/>
+      <path d="M659.706,1394.944 L659.706,1404.636 L651.724,1407.249 L637.565,1402.403 z" fill="#FFC72C"/>
+      <path d="M651.724,1407.249 L637.565,1412.143 L637.565,1402.403 z" fill="#EF3340"/>
+    </g>
+  </g>
+</svg>
