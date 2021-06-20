@@ -8,311 +8,375 @@
 </head>
 
 <body>
-    <div id="cycleTitle">
-        <h1>The PID-optimised research cycle</h1>
-    </div>
-    <div class="content">
-        <div id="diagram">
-            <div id="lifecycleImage">
-                <img src="./img/research_lifecycle.svg">
-                <div class="selecter" id="selecter1">1</div>
-                <div class="selecter" id="selecter2">2</div>
-                <div class="selecter" id="selecter3">3</div>
-                <div class="selecter" id="selecter4">4</div>
-                <div class="selecter" id="selecter5">5</div>
-                <div class="selecter" id="selecter6">6</div>
-                <div class="selecter" id="selecter7">7</div>
-                <div class="selecter" id="selecter8">8</div>
-                <div class="selecter" id="selecter9">9</div>
-                <div class="selecter" id="selecter10">10</div>
-            </div>
+    <div id="page">
+        <div id="cycleTitle">
+            <h1>The PID-optimised research cycle</h1>
         </div>
-        <div class="sidePanel" id="legend">
-            <div class="legendContent">
-                <div class="legendComps" id="actors">
-                    <h2>Actors and entities</h2>
-                    <div class="legendCells">
-                        <div class="legendCellLeft">
-                            <img src="img/funder.svg">
+        <div class="content">
+            <div id="diagram">
+                <div id="lifecycleImage">
+                    <img src="./img/research_lifecycle.svg">
+                    <div class="selecter" id="selecter1">1</div>
+                    <div class="selecter" id="selecter2">2</div>
+                    <div class="selecter" id="selecter3">3</div>
+                    <div class="selecter" id="selecter4">4</div>
+                    <div class="selecter" id="selecter5">5</div>
+                    <div class="selecter" id="selecter6">6</div>
+                    <div class="selecter" id="selecter7">7</div>
+                    <div class="selecter" id="selecter8">8</div>
+                    <div class="selecter" id="selecter9">9</div>
+                    <div class="selecter" id="selecter10">10</div>
+                </div>
+            </div>
+            <div class="sidePanelContainer">
+                <div class="sidePanel" id="legend">
+                    <div class="legendContent">
+                        <div class="legendComps" id="actors">
+                            <div class="sidePanelTitle" id="legendTitleTop">
+                                Actors and entities
+                            </div>
+                            <div class="legendCells">
+                                <div class="legendCellLeft">
+                                    <img src="img/funder.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp; Funder
+                                </div>
+                                <div class="break"></div> <!-- Line Break-->
+                                <div class="legendCellLeft">
+                                    <img src="img/inst.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp; Research performing org
+                                </div>
+                                <div class="break"></div> <!-- Line Break-->
+                                <div class="legendCellLeft">
+                                    <img src="img/person.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp; Research contributor
+                                </div>
+                                <div class="break"></div> <!-- Line Break-->
+                                <div class="legendCellLeft" id="outputCell">
+                                    <img src="img/outputs.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp; Research output platforms<br>
+                                    &nbsp; &nbsp; &nbsp; (articles, data, algorithms, etc)
+                                </div>
+                            </div>
                         </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp; Funder
-                        </div>
-                        <div class="legendCellLeft">
-                            <img src="img/inst.svg">
-                        </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp; Research performing org
-                        </div>
-                        <div class="legendCellLeft">
-                            <img src="img/person.svg">
-                        </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp; Research contributor
-                        </div>
-                        <div class="legendCellLeft" id="outputCell">
-                            <img src="img/outputs.svg">
-                        </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp; Research output platforms<br>
-                            &nbsp; &nbsp; &nbsp; (articles, data, algorithms, etc)
+                        <div class="legendComps" id="pidsAndReg">
+                            <div class="sidePanelTitle" id="legendTitleBottom">
+                                Priority PIDs and registries
+                            </div>
+                            <div class="legendCells">
+                                <div class="legendCellLeft">
+                                    <img src="img/xref.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp;Crossref
+                                </div>
+                                <div class="break"></div> <!-- Line Break-->
+                                <div class="legendCellLeft">
+                                    <img src="img/datacite.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp;Datacite
+                                </div>
+                                <div class="break"></div> <!-- Line Break-->
+                                <div class="legendCellLeft">
+                                    <img src="img/orcid.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp;ORCID
+                                </div>
+                                <div class="break"></div> <!-- Line Break-->
+                                <div class="legendCellLeft">
+                                    <img src="img/doi.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp;Digital object identifier (DOI)
+                                </div>
+                                <div class="break"></div> <!-- Line Break-->
+                                <div class="legendCellLeft">
+                                    <img src="img/raid.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp;Research activity identifier (RAiD)
+                                </div>
+                                <div class="break"></div> <!-- Line Break-->
+                                <div class="legendCellLeft">
+                                    <img src="img/ror.svg">
+                                </div>
+                                <div class="legendCellRight">
+                                    &nbsp;= &nbsp;Research organisation registry (ROR)
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="legendComps" id="pidsAndReg">
-                    <h2>Priority PIDs and registries</h2>
-                    <div class="legendCells">
-                        <div class="legendCellLeft">
-                            <img src="img/xref.svg">
+                <div class="sidePanel" id="sidePanel1">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow1"></div>
+                        <div class="sidePanelTitle">
+                            1. Grant Application
                         </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp;Crossref
-                        </div>
-                        <div class="legendCellLeft">
-                            <img src="img/datacite.svg">
-                        </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp;Datacite
-                        </div>
-                        <div class="legendCellLeft">
-                            <img src="img/orcid.svg">
-                        </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp;ORCID
-                        </div>
-                        <div class="legendCellLeft">
-                            <img src="img/doi.svg">
-                        </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp;Digital object identifier (DOI)
-                        </div>
-                        <div class="legendCellLeft">
-                            <img src="img/raid.svg">
-                        </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp;Research activity identifier (RAiD)
-                        </div>
-                        <div class="legendCellLeft">
-                            <img src="img/ror.svg">
-                        </div>
-                        <div class="legendCellRight">
-                            &nbsp;= &nbsp;Research organisation registry (ROR)
-                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow1"></div>
+                    </div>
+                    <p><b>Researchers</b> and <b>institutions</b> pass PIDs for previous <b>grants, outputs,
+                            organisations,
+                            people</b>, and
+                        <b>projects</b> to grant application systems
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                        <img src="img/orcid.svg">
+                        <img src="img/ror.svg">
+                        <img src="img/raid.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>Less manual data entry</li>
+                            <li>More accurate data</li>
+                            <li>More time for including contextual information</li>
+                        </ol>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel1">
-            <div class="sidePanelTitle">
-                <h2>1. Grant Application:</h2>
-            </div>
-            <p><b>Researchers</b> and <b>institutions</b> pass PIDs for previous <b>grants, outputs, organisations,
-                    people</b>, and
-                <b>projects</b> to grant application systems
-            </p>
-            <div class="logos">
-                <img src="img/doi.svg">
-                <img src="img/orcid.svg">
-                <img src="img/ror.svg">
-                <img src="img/raid.svg">
-            </div>
-            <div class="benefits">
-                BENEFITS:
-                <ol>
-                    <li>Less manual data entry</li>
-                    <li>More accurate data</li>
-                    <li>More time for including contextual information</li>
-                </ol>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel2">
-            <div class="sidePanelTitle">
-                <h2>2. Grant application and review:</h2>
-                <p><b>Funders</b> ingest data about <b>grants, outputs, organisations</b>, and <b>projects</b> from PID
-                    registries</p>
-                <div class="logos">
-                    <img src="img/doi.svg">
-                    <img src="img/orcid.svg">
-                    <img src="img/ror.svg">
-                    <img src="img/raid.svg">
+                <div class="sidePanel" id="sidePanel2">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow2"></div>
+                        <div class="sidePanelTitle">
+                            2. Grant application and review
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow2"></div>
+                    </div>
+                    <p><b>Funders</b> ingest data about <b>grants, outputs, organisations</b>, and <b>projects</b> from
+                        PID
+                        registries</p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                        <img src="img/orcid.svg">
+                        <img src="img/ror.svg">
+                        <img src="img/raid.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>Less manual data entry</li>
+                            <li>More accurate data</li>
+                            <li>More time for including contextual information</li>
+                            <li>Easier reviewer selection and recognition</li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="benefits">
-                    BENEFITS:
-                    <ol>
-                        <li>Less manual data entry</li>
-                        <li>More accurate data</li>
-                        <li>More time for including contextual information</li>
-                        <li>Easier reviewer selection and recognition</li>
-                    </ol>
+                <div class="sidePanel" id="sidePanel3">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow3"></div>
+                        <div class="sidePanelTitle">
+                            3. Grant award
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow3"></div>
+                    </div>
+                    <p>
+                        <b>Funders</b> register DOIs for new <b>grant</b> metadata
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>Globally unique grant IDs and metadata to aid reporting</li>
+                            <li>Authoritative metadata and connections to other PIDs to aid project management</li>
+                            <li>Simplified communication of and compliance with policies (e.g. OA, DMPs, etc.)</li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel3">
-            <h2>3. Grant award:</h2>
-            <p>
-                <b>Funders</b> register DOIs for new <b>grant</b> metadata
-            </p>
-            <div class="logos">
-                <img src="img/doi.svg">
-            </div>
-            <div class="benefits">
-                BENEFITS:
-                <ol>
-                    <li>Globally unique grant IDs and metadata to aid reporting</li>
-                    <li>Authoritative metadata and connections to other PIDs to aid project management</li>
-                    <li>Simplified communication of and compliance with policies (e.g. OA, DMPs, etc.)</li>
-                </ol>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel4">
-            <div class="sidePanelTitle">
-                <h2>4. Grant award:</h2>
-                <p><b>Institutions</b> ingest data about <b>grants</b> and associated <b>people</b> and
-                    <b>organisations</b>
-                </p>
-                <div class="logos">
-                    <img src="img/doi.svg">
-                    <img src="img/orcid.svg">
-                    <img src="img/ror.svg">
-                </div>
-                <div class="benefits">
-                    BENEFITS:
-                    <ol>
-                        <li>More accurate data</li>
-                        <li>Time/effort savings</li>
-                        <li>Improved reporting</li>
+                <div class="sidePanel" id="sidePanel4">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow4"></div>
+                        <div class="sidePanelTitle">
+                            4. Grant award
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow4"></div>
+                    </div>
+                    <p><b>Institutions</b> ingest data about <b>grants</b> and associated <b>people</b> and
+                        <b>organisations</b>
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                        <img src="img/orcid.svg">
+                        <img src="img/ror.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>More accurate data</li>
+                            <li>Time/effort savings</li>
+                            <li>Improved reporting</li>
 
-                    </ol>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel5">
-            <div class="sidePanelTitle">
-                <h2>5. Project registration:</h2>
-                <p><b>Institutions</b> register RAiDs for <b>projects</b> and add/update links to associated
-                    <b>grants</b>, <b>equipment</b>, <b>people</b>, and <b>organisations</b>
-                </p>
-                <div class="logos">
-                    <img src="img/doi.svg">
-                    <img src="img/orcid.svg">
-                    <img src="img/ror.svg">
-                    <img src="img/raid.svg">
+                <div class="sidePanel" id="sidePanel5">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow5"></div>
+                        <div class="sidePanelTitle">
+                            5. Project registration
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow5"></div>
+                    </div>
+                    <p><b>Institutions</b> register RAiDs for <b>projects</b> and add/update links to associated
+                        <b>grants</b>, <b>equipment</b>, <b>people</b>, and <b>organisations</b>
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                        <img src="img/orcid.svg">
+                        <img src="img/ror.svg">
+                        <img src="img/raid.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>More accurate data</li>
+                            <li>Time/effort savings</li>
+                            <li>Improved visibility of collaborations across institutions and countries</li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="benefits">
-                    BENEFITS:
-                    <ol>
-                        <li>More accurate data</li>
-                        <li>Time/effort savings</li>
-                        <li>Improved visibility of collaborations across institutions and countries</li>
-                    </ol>
+                <div class="sidePanel" id="sidePanel6">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow6"></div>
+                        <div class="sidePanelTitle">
+                            6. Output submission
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow6"></div>
+                    </div>
+                    <p><b>Researchers</b> share their ORCID ID when submitting new <b>outputs</b> and connect to ROR IDs
+                        for
+                        <b>institutional</b> affiliations and grant DOIs for <b>funding</b>
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                        <img src="img/orcid.svg">
+                        <img src="img/ror.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>More accurate data about co-authors, affiliations, and funding</li>
+                            <li>Time/effort savings in review and metadata creation</li>
+                            <li>Easier sign-in</li>
+                            <li>Easier APC management</li>
+                            <li>Easier reviewer selection and recognition</li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel6">
-            <div class="sidePanelTitle">
-                <h2>6. Output submission:</h2>
-                <p><b>Researchers</b> share their ORCID ID when submitting new <b>outputs</b> and connect to ROR IDs for
-                    <b>institutional</b> affiliations and grant DOIs for <b>funding</b>
-                </p>
-                <div class="logos">
-                    <img src="img/doi.svg">
-                    <img src="img/orcid.svg">
-                    <img src="img/ror.svg">
+                <div class="sidePanel" id="sidePanel7">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow7"></div>
+                        <div class="sidePanelTitle">
+                            7. Output publication
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow7"></div>
+                    </div>
+                    <p><b>Publisher</b>/repositories ingest data about <b>grants</b>, <b>people</b>, <b>projects</b>,
+                        and
+                        <b>organisations</b> linked to <b>outputs</b>
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                        <img src="img/orcid.svg">
+                        <img src="img/ror.svg">
+                        <img src="img/raid.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>Reduced administrative overhead for publishers</li>
+                            <li>Improved author experience</li>
+                            <li>Richer metadata to aid discovery, analysis, and reporting</li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="benefits">
-                    BENEFITS:
-                    <ol>
-                        <li>More accurate data about co-authors, affiliations, and funding</li>
-                        <li>Time/effort savings in review and metadata creation</li>
-                        <li>Easier sign-in</li>
-                        <li>Easier APC management</li>
-                        <li>Easier reviewer selection and recognition</li>
-                    </ol>
+                <div class="sidePanel" id="sidePanel8">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow8"></div>
+                        <div class="sidePanelTitle">
+                            8. Output registration
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow8"></div>
+                    </div>
+                    <p><b>Publishers</b>/<b>repositories</b> register DOIs for new <b>outputs</b> and populate metadata
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>Globally unique output IDs and metadata to aid analysis, citation, discovery, and
+                                reporting
+                            </li>
+                            <li>Embedded PIDs for associated entities (authors, funding, etc.) streamline reporting and
+                                analysis</li>
+                            <li>Greater ability to track reach and impact of content</li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel7">
-            <div class="sidePanelTitle">
-                <h2>7. Output publication:</h2>
-                <p><b>Publisher</b>/repositories ingest data about <b>grants</b>, <b>people</b>, <b>projects</b>, and
-                    <b>organisations</b> linked to <b>outputs</b>
-                </p>
-                <div class="logos">
-                    <img src="img/doi.svg">
-                    <img src="img/orcid.svg">
-                    <img src="img/ror.svg">
-                    <img src="img/raid.svg">
+                <div class="sidePanel" id="sidePanel9">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow9"></div>
+                        <div class="sidePanelTitle">
+                            9. Content notifications
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow9"></div>
+                    </div>
+                    <p>PID registries send automatic updates of new <b>publications</b> etc. to <b>institutions</b> and
+                        <b>funders</b>
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                        <img src="img/orcid.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>Reduced administrative overhead for institutions/funders</li>
+                            <li>More timely data for reporting and analysis</li>
+                            <li>Less manual data entry</li>
+                            <li>More accurate data</li>
+                            <li>Time/effort savings for researchers</li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="benefits">
-                    BENEFITS:
-                    <ol>
-                        <li>Reduced administrative overhead for publishers</li>
-                        <li>Improved author experience</li>
-                        <li>Richer metadata to aid discovery, analysis, and reporting</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel8">
-            <div class="sidePanelTitle">
-                <h2>8. Output registration:</h2>
-                <p><b>Publishers</b>/<b>repositories</b> register DOIs for new <b>outputs</b> and populate metadata</p>
-                <div class="logos">
-                    <img src="img/doi.svg">
-                </div>
-                <div class="benefits">
-                    BENEFITS:
-                    <ol>
-                        <li>Globally unique output IDs and metadata to aid analysis, citation, discovery, and reporting
-                        </li>
-                        <li>Embedded PIDs for associated entities (authors, funding, etc.) streamline reporting and
-                            analysis</li>
-                        <li>Greater ability to track reach and impact of content</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel9">
-            <div class="sidePanelTitle">
-                <h2>9. Content notifications:</h2>
-                <p>PID registries send automatic updates of new <b>publications</b> etc. to <b>institutions</b> and
-                    <b>funders</b>
-                </p>
-                <div class="logos">
-                    <img src="img/doi.svg">
-                    <img src="img/orcid.svg">
-                </div>
-                <div class="benefits">
-                    BENEFITS:
-                    <ol>
-                        <li>Reduced administrative overhead for institutions/funders</li>
-                        <li>More timely data for reporting and analysis</li>
-                        <li>Less manual data entry</li>
-                        <li>More accurate data</li>
-                        <li>Time/effort savings for researchers</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <div class="sidePanel" id="sidePanel10">
-            <div class="sidePanelTitle">
-                <h2>10. Reporting:</h2>
-                <p><b>Researchers</b> and <b>institutions</b> pass PIDs for <b>outputs</b>, <b>organisations</b>,
-                    <b>people</b>, and <b>projects</b> to <b>funders</b>' reporting systems
-                </p>
-                <div class="logos">
-                    <img src="img/doi.svg">
-                    <img src="img/orcid.svg">
-                    <img src="img/ror.svg">
-                    <img src="img/raid.svg">
-                </div>
-                <div class="benefits">
-                    BENEFITS:
-                    <ol>
-                        <li>Less manual data entry</li>
-                        <li>More accurate data</li>
-                        <li>More time for including contextual information</li>
-                    </ol>
+                <div class="sidePanel" id="sidePanel10">
+                    <div class="sidePanelTitleRow">
+                        <div class="sidePanelLeftArrow" id="sidePanelLeftArrow10"></div>
+                        <div class="sidePanelTitle">
+                            10. Reporting
+                        </div>
+                        <div class="sidePanelRightArrow" id="sidePanelRightArrow10"></div>
+                    </div>
+                    <p><b>Researchers</b> and <b>institutions</b> pass PIDs for <b>outputs</b>, <b>organisations</b>,
+                        <b>people</b>, and <b>projects</b> to <b>funders</b>' reporting systems
+                    </p>
+                    <div class="logos">
+                        <img src="img/doi.svg">
+                        <img src="img/orcid.svg">
+                        <img src="img/ror.svg">
+                        <img src="img/raid.svg">
+                    </div>
+                    <div class="benefits">
+                        BENEFITS:
+                        <ol>
+                            <li>Less manual data entry</li>
+                            <li>More accurate data</li>
+                            <li>More time for including contextual information</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>

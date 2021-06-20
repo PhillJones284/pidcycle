@@ -6,8 +6,9 @@
     --availWidth: var(--diagWidth) * 0.90;
     --availHeight: var(--diagHeight) * 0.90;
     --availLength: min(var(--availWidth), var(--availHeight));
-    --availSideBoxWidth: calc(100vw - var(--diagWidth));
     --sideBoxWidth: calc(100vw - var(--diagWidth));
+    --sideBoxScaleLength: min(calc(0.01 * var(--sideBoxWidth)), calc(0.0084 * var(--diagHeight)));
+    --selectorColor: #bd3636;
 }
 
 *{
@@ -29,11 +30,6 @@ h1{
     font-family: 'Noto Sans JP';
     font-size: var(--titleSize);
     /*border: blue 1pt solid;*/
-}
-
-h2{
-    font-family: 'Noto Sans JP';
-    font-size: 1.5vw;
 }
 
 p{
@@ -67,14 +63,16 @@ p{
     font-size: calc( 0.04 * var(--availLength));
     height: 8%;
     width: 8%;
-    border: 0 solid red;
     border-width: calc(0.01 * var(--availLength));
+    border-color: var(--selectorColor);
+    border-style: solid;
     border-radius: 50%;
     padding-top: 0.5%;
     z-index: 10;
     justify-content: center;
     background-color: white;
-    color: red;
+    color: var(--selectorColor);
+    --baseColor: var(--selectorColor);
 }
 
 .selecter:hover{
@@ -107,8 +105,8 @@ p{
 }
 
 #selecter6{
-    top: 14%;
-    left: 78%;
+    top: 21.5%;
+    left: 68%;
 }
 
 #selecter7{
@@ -134,29 +132,86 @@ p{
 .sidePanel{
     display: none;
     width: var(--sideBoxWidth);
-    border: 0 black solid;
-    border-width: calc(0.012 * var(--availLength));;
-    padding: 0% 1.5% 1.5% 1.5%;
+    max-height: calc(120 * var(--sideBoxScaleLength));
+    border: 0 rgb(39, 39, 39) solid;
+    border-width: calc(0.012 * var(--sideBoxWidth));
+    border-radius: calc(0.08 * var(--sideBoxWidth));
+    padding: calc(6 * var(--sideBoxScaleLength));
     margin-top: 2%;
     margin-right: 2%;
-    border-radius: calc(0.08 * var(--sideBoxWidth));
-    font-size: 1.2vw;
     background-color: white;
+    font-size: calc(4.5 * var(--sideBoxScaleLength));
+}
+
+.sidePanelTitleRow{
+    display: flex;
+    align-items:flex-start;
+    /*justify-content: space-between;*/
+    gap: calc(5 * var(--sideBoxScaleLength));
+}
+
+.sidePanelTitle{
+    font-family: 'Noto Sans JP';
+    font-size: calc(5.5 * var(--sideBoxScaleLength));
+}
+
+.sidePanelLeftArrow{
+    width: 0; 
+    height: 0; 
+    border-top: 0 solid transparent;
+    border-bottom: 0 solid transparent; 
+    border-right: 0 solid var(--selectorColor);
+    border-top-width: calc(4 * var(--sideBoxScaleLength));
+    border-bottom-width: calc(4 * var(--sideBoxScaleLength));
+    border-right-width: calc(3 * var(--sideBoxScaleLength));
+}
+
+.sidePanelRightArrow{
+    width: 0; 
+    height: 0; 
+    border-top: 0 solid transparent;
+    border-bottom: 0 solid transparent; 
+    border-left: 0 solid var(--selectorColor);
+    border-top-width: calc(4 * var(--sideBoxScaleLength));
+    border-bottom-width: calc(4 * var(--sideBoxScaleLength));
+    border-left-width: calc(3 * var(--sideBoxScaleLength));
+    margin-left: auto;
+}
+
+.sidePanelLeftArrow:hover, .sidePanelRightArrow:hover{
+    cursor: pointer;
+}
+
+#legend{
+    display: block;
+    max-height: calc(114 * var(--sideBoxScaleLength));
+    font-size: calc(4 * var(--sideBoxScaleLength));
+}
+
+#legendTitleTop{
+    margin-bottom: calc(3 * var(--sideBoxScaleLength));
+}
+
+#legendTitleBottom{
+    margin-bottom: calc(3 * var(--sideBoxScaleLength));
+    margin-top: calc(4 * var(--sideBoxScaleLength));
 }
 
 .legendCells{
-    border: 1px solid red;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
-    gap: 0.3vw;
+    gap: calc(0.7 * var(--sideBoxScaleLength));
 }
 
 .legendCellLeft{
-    border: 1px solid green;
-    width: calc(0.06 * var(--sideBoxWidth));
-    height: calc(0.06 * var(--sideBoxWidth));
+    --iconSize: calc(5.8 * var(--sideBoxScaleLength));
+    width: var(--iconSize);
+    height: var(--iconSize);
+}
+
+#outputCell{
+    height: calc(12 * var(--sideBoxScaleLength));
 }
 
 .legendCellLeft img{
@@ -166,23 +221,14 @@ p{
 }
 
 .legendCellRight{
-    border: 1px solid chartreuse;
-    width: calc(0.72 * var(--sideBoxWidth));
-    font-size: 1vw;
+    width: calc(0.75 * var(--sideBoxWidth));
 }
 
-#outputCell{
-    height: calc(0.16 * var(--sideBoxWidth));
+.break{
+    flex-basis: 100%;
+    height: 0;
 }
 
-/*
-.sidePanelContent{
-    font-size: 1vw;
-}*/
-
-.legendContent{
-    border: 1px black dashed;
-}
 
 .logos{
     display: flex;
