@@ -17,13 +17,38 @@ function showBox(index){
 }
 
 Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
-    document.getElementById(elem.id).addEventListener("click",function(elem){
+    document.getElementById(elem.id).addEventListener("click",() => {
         showBox(index+1);
     });
 });
 
+Array.from(document.getElementsByClassName("outerLegendPopSelecter")).map(elem => {
+    document.getElementById(elem.id).addEventListener("mousedown", function(event){
+        const legItem = event.path[0].id.split('legPopSel')[1];
+        const legElem = 'legendPop'+legItem;
+        document.getElementById(legElem).style.display = "flex";
+    });
+    document.getElementById(elem.id).addEventListener("touchstart", function(event){
+        const legItem = event.path[0].id.split('legPopSel')[1];
+        const legElem = 'legendPop'+legItem;
+        document.getElementById(legElem).style.display = "flex";
+    }, {passive: true});
+    document.getElementById(elem.id).addEventListener("mouseup", function(event){
+        const legItem = event.path[0].id.split('legPopSel')[1];
+        const legElem = 'legendPop'+legItem;
+        document.getElementById(legElem).style.display = "none";
+    });
+});
+
+Array.from(document.getElementsByClassName("closeBtn")).map(elem => {
+    document.getElementById(elem.id).addEventListener("click", event => {
+        const idToClose = event.path[1].id;
+        document.getElementById(idToClose).style.display = "none";
+    });
+});
+
 Array.from(document.getElementsByClassName("sidePanelLeftArrow")).map((elem,index) => {
-    document.getElementById(elem.id).addEventListener("click", function(elem){
+    document.getElementById(elem.id).addEventListener("click", () => {
         let targetNumber;
         if (index == 0){
             targetNumber = 10;
