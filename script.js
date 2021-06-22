@@ -5,7 +5,7 @@ function showBox(index){
     Array.from(document.getElementsByClassName("sidePanel")).map(elem => {
         elem.style.display="none";
     });
-    sidePanelElem.style.display="block";
+    sidePanelElem.style.display="flex";
     Array.from(document.getElementsByClassName("selecter")).map(elem => {
         elem.style.borderColor=selectorColor;
         elem.style.backgroundColor="white";

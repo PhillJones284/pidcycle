@@ -11,6 +11,16 @@
     --selectorColor: #bd3636;
 }
 
+@media (orientation:portrait){
+    :root{
+        --titleSize: 5vw;
+        --diagHeight: calc(70vh - var(--topOfDiag));
+        --diagWidth: 100vw;
+        --sideBoxWidth: 90%;
+        --sideBoxScaleLength: 0.5vw;
+    }
+}
+
 *{
     box-sizing: border-box;
     font-family: "Lato";
@@ -29,7 +39,6 @@ h1{
     text-align: center;
     font-family: 'Noto Sans JP';
     font-size: var(--titleSize);
-    /*border: blue 1pt solid;*/
 }
 
 
@@ -38,6 +47,7 @@ h1{
     top: 94vh;
     left: 2vw;
     width: max(18vw, calc(0.45 * var(--availLength)) );
+    z-index: -10;
 }
 
 #mbLogoContainer img{
@@ -242,6 +252,7 @@ p{
 
 .sidePanel{
     display: none;
+    flex-wrap: wrap;
     width: var(--sideBoxWidth);
     max-height: calc(120 * var(--sideBoxScaleLength));
     border: 0 rgb(39, 39, 39) solid;
@@ -254,7 +265,12 @@ p{
     font-size: calc(4.5 * var(--sideBoxScaleLength));
 }
 
+.leftSidePanelBox, .rightSidePanelBox{
+    flex-basis: 100%;
+}
+
 .sidePanelTitleRow{
+    flex-basis: 100%;
     display: flex;
     align-items:flex-start;
     gap: calc(5 * var(--sideBoxScaleLength));
@@ -310,7 +326,7 @@ p{
 .legendCells{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: calc(0.7 * var(--sideBoxScaleLength));
 }
 
@@ -318,6 +334,7 @@ p{
     --iconSize: calc(5.8 * var(--sideBoxScaleLength));
     width: var(--iconSize);
     height: var(--iconSize);
+    flex-basis: 10%;
 }
 
 #outputCell{
@@ -331,19 +348,14 @@ p{
 }
 
 .legendCellRight{
-    width: calc(0.75 * var(--sideBoxWidth));
+    flex-basis: 88%;
 }
-
-.break{
-    flex-basis: 100%;
-    height: 0;
-}
-
 
 .logos{
     display: flex;
     justify-content: center;
     text-align: center;
+    gap: 2%;
 }
 
 .logos img{
@@ -356,9 +368,40 @@ p{
     color: #3997A6;
 }
 
-/*
-@media (orientation: portrait) {
+ol{
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  padding-inline-start: 1em;
+}
+
+@media (orientation:portrait) {
     .content{
         display: block;
     }
-}*/
+    .sidePanel{
+        gap: 3%;
+        width: 90%;
+        margin: auto;
+        border-radius: 2em;
+    }
+    .leftSidePanelBox, .benefits{
+        flex-basis: 48.5%;
+    }
+    .benefits{
+        margin-top: 2.5%;
+    }
+    .legendContent{
+        display: flex;
+        align-items: flex-start;
+    }
+    #legendTitleBottom{
+        margin-top: 0;
+    }
+    #actors{
+        flex-basis: 45%;
+    }
+    #pidsAndReg{
+        flex-basis: 55%;
+    }
+}
+
