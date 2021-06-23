@@ -32,8 +32,8 @@
                     <div class="selecter" id="selecter9">9</div>
                     <div class="selecter" id="selecter10">10</div>
                     <!-- Begin legend overlay -->
-                    <div class="outerLegendPopSelecter" id="legPopSelFunder"></div>
-                    <div class="legendPop" id="legendPopFunder">
+                    <div class="outerLegendPopSelecter legendPopSelecter" id="legPopSelFunder"></div>
+                    <div class="legendPop legendPopNarrow" id="legendPopFunder">
                         <div class="legendPopLogo">
                             <img src="img/funder.svg">
                         </div>
@@ -43,8 +43,8 @@
                         <div class="closeBtn" id="closeBtnFunder">X</div>
                     </div>
                     <!-- Break legend overlay -->
-                    <div class="outerLegendPopSelecter" class="legPopSelInst" id="legPopSelInst1"></div>
-                    <div class="legendPop" class="legendPopInst" id="legendPopInst1">
+                    <div class="outerLegendPopSelecter legendPopSelecter" id="legPopSelInst1"></div>
+                    <div class="legendPop" id="legendPopInst1">
                         <div class="legendPopLogo">
                             <img src="img/inst.svg">
                             <img src="img/person.svg">
@@ -56,7 +56,7 @@
                         <div class="closeBtn" id="closeBtnInst">X</div>
                     </div>
                     <!-- Break legend overlay -->
-                    <div class="outerLegendPopSelecter" id="legPopSelPlatform"></div>
+                    <div class="outerLegendPopSelecter legendPopSelecter" id="legPopSelPlatform"></div>
                     <div class="legendPop" id="legendPopPlatform">
                         <div class="legendPopLogo">
                             <img src="img/outputs.svg">
@@ -68,8 +68,8 @@
                         <div class="closeBtn" id="closeBtnPlatform">X</div>
                     </div>
                     <!-- Break legend overlay -->
-                    <div class="outerLegendPopSelecter" class="legPopSelInst" id="legPopSelInst2"></div>
-                    <div class="legendPop" class="legendPopInst" id="legendPopInst2">
+                    <div class="outerLegendPopSelecter legendPopSelecter" id="legPopSelInst2"></div>
+                    <div class="legendPop" id="legendPopInst2">
                         <div class="legendPopLogo">
                             <img src="img/inst.svg">
                             <img src="img/person.svg">
@@ -79,6 +79,61 @@
                             = Research contributor
                         </div>
                         <div class="closeBtn" id="closeBtnInst2">X</div>
+                    </div>
+                    <!-- Break legend overlay  inner circle-->
+                    <div class="innerLegendPopSelecter legendPopSelecter" id="legPopSelXref"></div>
+                    <div class="legendPop legendPopNarrow" id="legendPopXref">
+                        <div class="legendPopLogo">
+                            <img src="img/xref.svg">
+                        </div>
+                        <div class="legendPopLabel">
+                            = Crossref
+                        </div>
+                        <div class="closeBtn" id="closeBtnXref">X</div>
+                    </div>
+                    <!-- Break legend overlay  inner circle-->
+                    <div class="innerLegendPopSelecter legendPopSelecter" id="legPopSelDatacite"></div>
+                    <div class="legendPop legendPopNarrow" id="legendPopDatacite">
+                        <div class="legendPopLogo">
+                            <img src="img/datacite.svg">
+                        </div>
+                        <div class="legendPopLabel">
+                            = Datacite
+                        </div>
+                        <div class="closeBtn" id="closeBtnDatacite">X</div>
+                    </div>
+                    <!-- Break legend overlay  inner circle-->
+                    <div class="innerLegendPopSelecter legendPopSelecter" id="legPopSelRaid"></div>
+                    <div class="legendPop" id="legendPopRaid">
+                        <div class="legendPopLogo">
+                            <img src="img/raid.svg">
+                        </div>
+                        <div class="legendPopLabel">
+                            = Research Activity identifier (RAiD)
+                        </div>
+                        <div class="closeBtn" id="closeBtnRaid">X</div>
+                    </div>
+                    <!-- Break legend overlay  inner circle-->
+                    <div class="innerLegendPopSelecter legendPopSelecter" id="legPopSelOrcid"></div>
+                    <div class="legendPop legendPopNarrow" id="legendPopOrcid">
+                        <div class="legendPopLogo">
+                            <img src="img/orcid.svg">
+                        </div>
+                        <div class="legendPopLabel">
+                            = ORCID
+                        </div>
+                        <div class="closeBtn" id="closeBtnOrcid">X</div>
+                    </div>
+                    <!-- Break legend overlay  inner circle-->
+                    <div class="innerLegendPopSelecter legendPopSelecter" id="legPopSelRor"></div>
+                    <div class="legendPop" id="legendPopRor">
+                        <div class="legendPopLogo">
+                            <img src="img/ror.svg">
+                        </div>
+                        <div class="legendPopLabel">
+                            = Research Organisation Registry (ROR)
+                        </div>
+                        <div class="closeBtn" id="closeBtnRor">X</div>
                     </div>
                 </div>
             </div>
@@ -100,7 +155,7 @@
                                     <img src="img/inst.svg">
                                 </div>
                                 <div class="legendCellRight">
-                                    &nbsp;= &nbsp; Research performing org
+                                    &nbsp;= &nbsp; Research performing organisation
                                 </div>
                                 <div class="legendCellLeft">
                                     <img src="img/person.svg">
@@ -172,8 +227,7 @@
                     </div>
                     <div class="leftSidePanelBox">
                         <p>
-                            <b>Researchers</b> and <b>institutions</b> pass PIDs for previous <b>grants, outputs,
-                                organisations, people</b>, and <b>projects</b> to grant application systems
+                            <b>Researchers</b> and <b>institutions</b> pass PIDs for previous <b>grants, outputs, organisations, people</b>, and <b>projects</b> to grant application systems
                         </p>
                         <div class="logos">
                             <img src="img/doi.svg">
@@ -201,8 +255,7 @@
                     </div>
                     <div class="leftSidePanelBox">
                         <p>
-                            <b>Funders</b> ingest data about <b>grants, outputs, organisations</b>, and <b>projects</b>
-                            from PID registries
+                            <b>Funders</b> ingest data about <b>grants, outputs, organisations</b>, and <b>projects</b> from PID registries
                         </p>
                         <div class="logos">
                             <img src="img/doi.svg">
@@ -282,8 +335,7 @@
                         <div class="sidePanelRightArrow" id="sidePanelRightArrow5"></div>
                     </div>
                     <div class="leftSidePanelBox">
-                        <p><b>Institutions</b> register RAiDs for <b>projects</b> and add/update links to associated
-                            <b>grants</b>, <b>equipment</b>, <b>people</b>, and <b>organisations</b>
+                        <p><b>Institutions</b> register RAiDs for <b>projects</b> and add/update links to associated <b>grants</b>, <b>equipment</b>, <b>people</b>, and <b>organisations</b>
                         </p>
                         <div class="logos">
                             <img src="img/doi.svg">
@@ -310,8 +362,7 @@
                         <div class="sidePanelRightArrow" id="sidePanelRightArrow6"></div>
                     </div>
                     <div class="leftSidePanelBox">
-                        <p><b>Researchers</b> share their ORCID ID when submitting new <b>outputs</b> and connect to ROR
-                            IDs for <b>institutional</b> affiliations and grant DOIs for <b>funding</b>
+                        <p><b>Researchers</b> share their ORCID ID when submitting new <b>outputs</b> and connect to ROR IDs for <b>institutional</b> affiliations and grant DOIs for <b>funding</b>
                         </p>
                         <div class="logos">
                             <img src="img/doi.svg">
@@ -339,10 +390,7 @@
                         <div class="sidePanelRightArrow" id="sidePanelRightArrow7"></div>
                     </div>
                     <div class="leftSidePanelBox">
-                        <p><b>Publisher</b>/repositories ingest data about <b>grants</b>, <b>people</b>,
-                            <b>projects</b>,
-                            and
-                            <b>organisations</b> linked to <b>outputs</b>
+                        <p><b>Publisher</b>/repositories ingest data about <b>grants</b>, <b>people</b>, <b>projects</b>, and <b>organisations</b> linked to <b>outputs</b>
                         </p>
                         <div class="logos">
                             <img src="img/doi.svg">
@@ -369,8 +417,7 @@
                         <div class="sidePanelRightArrow" id="sidePanelRightArrow8"></div>
                     </div>
                     <div class="leftSidePanelBox">
-                        <p><b>Publishers</b>/<b>repositories</b> register DOIs for new <b>outputs</b> and populate
-                            metadata
+                        <p><b>Publishers</b>/<b>repositories</b> register DOIs for new <b>outputs</b> and populate metadata
                         </p>
                         <div class="logos">
                             <img src="img/doi.svg">
@@ -379,11 +426,8 @@
                     <div class="benefits">
                         BENEFITS:
                         <ol>
-                            <li>Globally unique output IDs and metadata to aid analysis, citation, discovery, and
-                                reporting
-                            </li>
-                            <li>Embedded PIDs for associated entities (authors, funding, etc.) streamline reporting and
-                                analysis</li>
+                            <li>Globally unique output IDs and metadata to aid analysis, citation, discovery, and reporting</li>
+                            <li>Embedded PIDs for associated entities (authors, funding, etc.) streamline reporting and analysis</li>
                             <li>Greater ability to track reach and impact of content</li>
                         </ol>
                     </div>

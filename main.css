@@ -153,31 +153,57 @@ p{
 
 .outerLegendPopSelecter{
     position: absolute;
-    width: calc(0.225 * var(--availLength));
-    height: calc(0.225 * var(--availLength));
+    width: 22.5%;
+    height: 22.5%;
     border-radius: 50%;
 }
 
-.outerLegendPopSelecter:hover{
+.innerLegendPopSelecter{
+    position: absolute;
+}
+
+.legendPopSelecter:hover{
     cursor: pointer;
 }
+
+/*.legendPop{
+    position: absolute;
+    display: none;
+    align-items: center;
+    min-width: 80%;
+    min-height: 20%;
+    gap: 3%;
+    background-color: white;
+    border-width: 0.2em;
+    border-color: #3997A6;
+    border-style: solid;
+    padding: 0.4em;
+    padding-left: calc(0.04 * var(--availLength));
+    border-radius: calc(0.03 * var(--availLength));
+    font-size: calc(0.05 * var(--availLength));
+    z-index: 20;
+}*/
 
 .legendPop{
     position: absolute;
     display: none;
     align-items: center;
-    min-width: calc(0.8 * var(--availLength));
-    min-height: calc(0.2 * var(--availLength));
-    gap: calc(0.03 * var(--availLength));
+    min-width: 80%;
+    min-height: 20%;
+    gap: 3%;
     background-color: white;
-    border-width: calc(0.01 * var(--availLength));
+    border-width: 0.2em;
     border-color: #3997A6;
     border-style: solid;
-    padding: calc(0.02 * var(--availLength));
-    padding-left: calc(0.04 * var(--availLength));
-    border-radius: calc(0.03 * var(--availLength));
+    padding: 0.4em;
+    padding-left: 1em;
+    border-radius: 0.7em;
     font-size: calc(0.05 * var(--availLength));
     z-index: 20;
+}
+
+.legendPopNarrow{
+    min-width: 50%;
 }
 
 .legendPopLogo{
@@ -190,8 +216,8 @@ p{
 }
 
 #legendPopFunder{
-    top: 55%;
-    left: 22%;
+    top: 63%;
+    left: 5%;
 }
 
 #legPopSelInst1{
@@ -205,8 +231,8 @@ p{
 }
 
 #legendPopInst1{
-    top: 24%;
-    left: 24%;
+    top: 25%;
+    left: 2%;
 }
 
 #legendPopInst2{
@@ -220,7 +246,7 @@ p{
 }
 
 #legendPopPlatform{
-    top: 62%;
+    top: 12%;
     left: 15%;
 }
 
@@ -230,6 +256,82 @@ p{
 
 #legendPopInst1 .legendPopLabel, #legendPopInst2 .legendPopLabel{
     line-height: calc(0.1 * var(--availLength));
+}
+
+#legPopSelXref{
+    top: 38.5%;
+    left: 40%;
+    width: 6%;
+    height: 8%;
+}
+
+#legendPopXref{
+    top: 47%;
+    left: 2%;
+}
+
+#legendPopXref .legendPopLogo{
+    width: calc(0.08 * var(--availLength));
+}
+
+#legPopSelDatacite{
+    top: 38.5%;
+    left: 53.5%;
+    width: 8%;
+    height: 8%;
+}
+
+#legendPopDatacite{
+    top: 47%;
+    left: 30%;
+}
+
+#legPopSelRaid{
+    top: 47.5%;
+    left: 45.5%;
+    width: 9.5%;
+    height: 5.5%;
+}
+
+#legendPopRaid{
+    top: 54%;
+    left: 10%;
+}
+
+#legendPopRaid .legendPopLabel{
+    font-size: calc(0.035 * var(--availLength));
+    padding-bottom: 2%;
+}
+
+#legPopSelOrcid{
+    top: 54%;
+    left: 39.6%;
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
+}
+
+#legendPopOrcid{
+    top: 33%;
+    left: 2%;
+}
+
+#legPopSelRor{
+    top: 54%;
+    left: 52.5%;
+    width: 9.5%;
+    height: 7%;
+}
+
+#legendPopRor{
+    top: 33%;
+    left: 2%;
+    min-width: 90%;
+}
+
+#legendPopRor .legendPopLabel{
+    font-size: calc(0.035 * var(--availLength));
+    padding-bottom: 2%;
 }
 
 .closeBtn{

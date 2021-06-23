@@ -38,7 +38,7 @@ Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
 
 //Add event listeners to the Outer ring icons for funders etc. Works for mouse press
 // and finger tap on mobile
-Array.from(document.getElementsByClassName("outerLegendPopSelecter")).map(elem => {
+Array.from(document.getElementsByClassName("legendPopSelecter")).map(elem => {
     document.getElementById(elem.id).addEventListener("mousedown", function(event){
         const legItem = event.path[0].id.split('legPopSel')[1];
         const legElem = 'legendPop'+legItem;
@@ -60,6 +60,7 @@ Array.from(document.getElementsByClassName("outerLegendPopSelecter")).map(elem =
 // slide their mouse or finger off the element before letting go
 Array.from(document.getElementsByClassName("closeBtn")).map(elem => {
     document.getElementById(elem.id).addEventListener("click", event => {
+        console.log("helllo");
         const idToClose = event.path[1].id;
         document.getElementById(idToClose).style.display = "none";
     });
