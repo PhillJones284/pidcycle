@@ -21,6 +21,8 @@ const moveLogo = () => {
     document.getElementById("mbLogoContainer").style.top = 0.94*windowHeight+'px';
 };
 
+moveLogo();
+
 Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
     document.getElementById(elem.id).addEventListener("click",() => {
         showBox(index+1);
