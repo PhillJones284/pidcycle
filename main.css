@@ -1,7 +1,7 @@
 :root{
-    --titleSize: 6vh;
+    --titleSize: calc(6 * var(--vh));
     --topOfDiag: calc(3 * var(--titleSize));
-    --diagHeight: calc(100vh - var(--topOfDiag));
+    --diagHeight: calc(100 * var(--vh) - var(--topOfDiag));
     --diagWidth: 70vw;
     --availWidth: var(--diagWidth) * 0.90;
     --availHeight: var(--diagHeight) * 0.98;
@@ -14,7 +14,7 @@
 @media (orientation:portrait){
     :root{
         --titleSize: 5vw;
-        --diagHeight: calc(70vh - var(--topOfDiag));
+        --diagHeight: calc(70 * var(--vh) - var(--topOfDiag));
         --diagWidth: 100vw;
         --sideBoxWidth: 90%;
         --sideBoxScaleLength: 0.5vw;
@@ -44,7 +44,7 @@ h1{
 
 #mbLogoContainer{
     position: absolute;
-    top: 94vh;
+    top: calc(94 * var(--vh));
     left: 2vw;
     width: max(18vw, calc(0.45 * var(--availLength)) );
 }
