@@ -1,4 +1,4 @@
-function showBox(index){
+const showBox = (index) => {
     const selectElem = document.getElementById('selecter'+index);
     const sidePanelElem = document.getElementById('sidePanel'+index);
     const selectorColor = getComputedStyle(selectElem).getPropertyValue("--baseColor");
@@ -14,7 +14,12 @@ function showBox(index){
     selectElem.style.borderColor="white";
     selectElem.style.backgroundColor=selectorColor;
     selectElem.style.color="white";
-}
+};
+
+const moveLogo = () => {
+    const windowHeight = window.innerHeight;
+    document.getElementById("mbLogoContainer").style.top = 0.94*windowHeight+'px';
+};
 
 Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
     document.getElementById(elem.id).addEventListener("click",() => {
