@@ -411,7 +411,7 @@ ol{
     }
 }
 
-@media (max-width:700px){
+@media (max-width:1200px){
     html, body{
         height: 100vh;
     }
