@@ -9,6 +9,8 @@
     --sideBoxWidth: calc(100vw - var(--diagWidth));
     --sideBoxScaleLength: min(calc(0.01 * var(--sideBoxWidth)), calc(0.0084 * var(--diagHeight)));
     --selectorColor: #bd3636;
+    --mbGrey: #4D4E50;
+    --mbDkMint: #0097a7;
 }
 
 @media (orientation:portrait){
@@ -39,8 +41,79 @@ h1{
     text-align: center;
     font-family: 'Noto Sans JP';
     font-size: var(--titleSize);
+    color: var(--mbGrey);
 }
 
+.startHere{
+    position: absolute;
+    top: var(--topOfDiag);
+    left: calc((0.5 * var(--diagWidth) ) - (0.5 * var(--availLength)) );
+    padding: 0.5%;
+    border: 0.25em var(--selectorColor) solid;
+    border-radius: 0.5em;
+    font-size: calc(0.05 * var(--availLength));
+    color: var(--selectorColor);
+    background-color: white;
+    z-index: 5;
+    --baseColor: var(--selectorColor);
+}
+
+.startHere:hover{
+    cursor: pointer;
+}
+
+#instructions{
+    display: none;
+    position: absolute;
+    top: 21%;
+    left: calc((0.5 * var(--diagWidth) ) - (0.4 * var(--availLength)));
+    width: calc(0.8 * var(--availLength));
+    font-size: calc(0.022 * var(--availLength));;
+    border: 0.5em var(--mbGrey) solid;
+    background-color: white;
+    border-radius: calc(0.05 * var(--availLength));
+    padding: calc(0.06 * var(--availLength));
+    padding-top: calc(0.03 * var(--availLength));
+    z-index: 6;
+}
+
+#instructions .closeBtn{
+    right: calc(0.02 * var(--availLength));
+    top: calc(0.02 * var(--availLength));
+}
+
+.instrucHeader{
+    font-family: 'Noto Sans JP';
+    color: var(--mbDkMint);
+    font-size: calc(0.05 * var(--availLength));
+    margin-bottom: calc(0.02 * var(--availLength));;
+}
+
+.instrucSubHeader{
+    font-family: 'Noto Sans JP';
+    color: var(--mbDkMint);
+    font-size: calc(0.03 * var(--availLength));
+    margin-bottom: calc(0.01 * var(--availLength));;
+}
+
+.guideRow{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: calc(0.01 * var(--availLength));
+}
+
+.guideImgContainer{
+    flex-basis: 15%;
+}
+
+.guideImgContainer img{
+    width: 100%;
+}
+
+.guideTextContainer{
+    flex-basis: 80%;
+}
 
 #mbLogoContainer{
     position: absolute;
@@ -90,7 +163,7 @@ p{
     border-style: solid;
     border-radius: 50%;
     padding-top: 0.5%;
-    z-index: 10;
+    z-index: 2;
     justify-content: center;
     background-color: white;
     color: var(--selectorColor);
@@ -166,24 +239,6 @@ p{
     cursor: pointer;
 }
 
-/*.legendPop{
-    position: absolute;
-    display: none;
-    align-items: center;
-    min-width: 80%;
-    min-height: 20%;
-    gap: 3%;
-    background-color: white;
-    border-width: 0.2em;
-    border-color: #3997A6;
-    border-style: solid;
-    padding: 0.4em;
-    padding-left: calc(0.04 * var(--availLength));
-    border-radius: calc(0.03 * var(--availLength));
-    font-size: calc(0.05 * var(--availLength));
-    z-index: 20;
-}*/
-
 .legendPop{
     position: absolute;
     display: none;
@@ -193,13 +248,13 @@ p{
     gap: 3%;
     background-color: white;
     border-width: 0.2em;
-    border-color: #3997A6;
+    border-color: var(--mbDkMint);
     border-style: solid;
     padding: 0.4em;
     padding-left: 1em;
     border-radius: 0.7em;
     font-size: calc(0.05 * var(--availLength));
-    z-index: 20;
+    z-index: 3;
 }
 
 .legendPopNarrow{
@@ -216,7 +271,7 @@ p{
 }
 
 #legendPopFunder{
-    top: 63%;
+    top: 18%;
     left: 5%;
 }
 
@@ -266,7 +321,7 @@ p{
 }
 
 #legendPopXref{
-    top: 47%;
+    top: 18%;
     left: 2%;
 }
 
@@ -282,7 +337,7 @@ p{
 }
 
 #legendPopDatacite{
-    top: 47%;
+    top: 18%;
     left: 30%;
 }
 
@@ -294,7 +349,7 @@ p{
 }
 
 #legendPopRaid{
-    top: 54%;
+    top: 27%;
     left: 10%;
 }
 
@@ -336,8 +391,13 @@ p{
 
 .closeBtn{
     position: absolute;
-    right: calc(0.01 * var(--availLength));;
-    top: calc(0.01 * var(--availLength));;
+    /*--elemWidth: 100%;
+    --elemHeight: 100%;
+    --scaleLength: calc(0.01 * max(var(--elemWidth, var(--elemHeight))));
+    right: calc(2 * var(--scaleLength));
+    top: calc(2 * var(--scaleLength));*/
+    right: calc(0.01 * var(--availLength));
+    top: calc(0.01 * var(--availLength));
     border-width: calc(0.005 * var(--availLength));
     border-color: black;
     border-style: solid;
@@ -353,7 +413,7 @@ p{
 }
 
 .sidePanelContainer{
-    z-index: 5;
+    z-index: 1;
 }
 
 .sidePanel{
@@ -362,7 +422,7 @@ p{
     flex-wrap: wrap;
     width: var(--sideBoxWidth);
     max-height: calc(120 * var(--sideBoxScaleLength));
-    border: 0 rgb(39, 39, 39) solid;
+    border: 0 var(--mbGrey) solid;
     border-width: calc(0.012 * var(--sideBoxWidth));
     border-radius: calc(0.08 * var(--sideBoxWidth));
     padding: calc(6 * var(--sideBoxScaleLength));
@@ -370,7 +430,7 @@ p{
     margin-right: 2%;
     background-color: white;
     font-size: calc(4.5 * var(--sideBoxScaleLength));
-    z-index: 5;
+    z-index: 2;
 }
 
 .leftSidePanelBox, .rightSidePanelBox{
