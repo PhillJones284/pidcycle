@@ -44,21 +44,30 @@ h1{
     color: var(--mbGrey);
 }
 
-.startHere{
+.bigButtons{
     position: absolute;
-    top: var(--topOfDiag);
-    left: calc((0.5 * var(--diagWidth) ) - (0.5 * var(--availLength)) );
+    top: calc(0.02 * var(--availLength));
     padding: 0.5%;
     border: 0.25em var(--selectorColor) solid;
     border-radius: 0.5em;
     font-size: calc(0.05 * var(--availLength));
     color: var(--selectorColor);
     background-color: white;
-    z-index: 5;
-    --baseColor: var(--selectorColor);
+    z-index: 6;
 }
 
-.startHere:hover{
+.startHere{
+    left: 0;
+}
+
+.reset{
+    right: 0;
+    color: white;
+    background-color: var(--selectorColor);
+    border-color: white;
+}
+
+.startHere:hover, .reset:hover{
     cursor: pointer;
 }
 
@@ -74,7 +83,7 @@ h1{
     border-radius: calc(0.05 * var(--availLength));
     padding: calc(0.06 * var(--availLength));
     padding-top: calc(0.03 * var(--availLength));
-    z-index: 6;
+    z-index: 7;
 }
 
 #instructions .closeBtn{
@@ -117,9 +126,10 @@ h1{
 
 #mbLogoContainer{
     position: absolute;
-    top: calc(94 * var(--vh));
+    top: calc(2 * var(--vh));
     left: 2vw;
-    width: max(18vw, calc(0.45 * var(--availLength)) );
+    /*width: max(12vw, calc(0.45 * var(--availLength)) );*/
+    width: 16vw;
 }
 
 #mbLogoContainer img{
@@ -142,7 +152,7 @@ p{
     position: absolute; 
     width: var(--availLength);
     height: var(--availLength);
-    top: calc(var(--topOfDiag) + (0.45 * var(--diagHeight) ) - (0.5 * var(--availLength)) );
+    top: calc(var(--topOfDiag) + (0.47 * var(--diagHeight) ) - (0.5 * var(--availLength)) );
     left: calc((0.5 * var(--diagWidth) ) - (0.5 * var(--availLength)) );
     z-index: 0;
 }
@@ -152,7 +162,7 @@ p{
     width: 100%;
 }
 
-.selecter{
+.roundButtons{
     position: absolute;
     display: flex;
     font-size: calc( 0.04 * var(--availLength));
@@ -167,7 +177,6 @@ p{
     justify-content: center;
     background-color: white;
     color: var(--selectorColor);
-    --baseColor: var(--selectorColor);
 }
 
 .selecter:hover{
@@ -254,7 +263,7 @@ p{
     padding-left: 1em;
     border-radius: 0.7em;
     font-size: calc(0.05 * var(--availLength));
-    z-index: 3;
+    z-index: 10;
 }
 
 .legendPopNarrow{
@@ -476,7 +485,7 @@ p{
     cursor: pointer;
 }
 
-#legend{
+.legend{
     display: block;
     max-height: calc(114 * var(--sideBoxScaleLength));
     font-size: calc(4 * var(--sideBoxScaleLength));
@@ -546,6 +555,10 @@ ol{
     .content{
         display: block;
     }
+    .reset{
+        top: auto;
+        bottom: 0;
+    }
     .sidePanel{
         gap: 3%;
         width: 90%;
@@ -558,6 +571,10 @@ ol{
     .benefits{
         margin-top: 2.5%;
     }
+    .legend{
+        padding: calc(3 * var(--sideBoxScaleLength));
+        font-size: calc(3.8 * var(--sideBoxScaleLength));
+    }
     .legendContent{
         display: flex;
         align-items: flex-start;
@@ -566,10 +583,10 @@ ol{
         margin-top: 0;
     }
     #actors{
-        flex-basis: 45%;
+        flex-basis: 48%;
     }
     #pidsAndReg{
-        flex-basis: 55%;
+        flex-basis: 52%;
     }
 }
 
@@ -579,4 +596,22 @@ ol{
     }
 }
 
+@media only screen and (max-width:800px){
+    #cycleTitle{
+        padding: calc(1 * var(--vh));
+    }
+    #lifecycleImage{
+        top: calc(var(--topOfDiag) + (0.5 * var(--diagHeight) ) - (0.5 * var(--availLength)) );
+    }
+}
+
+@media (max-aspect-ratio:1/1) and (min-aspect-ratio:3/5) {
+    .sidePanelTitle{
+        font-size: calc(4.5 * var(--sideBoxScaleLength));
+    }
+    .notes{
+        font-size: calc(3.2 * var(--sideBoxScaleLength));
+    }
+    
+}
 

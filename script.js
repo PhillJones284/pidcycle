@@ -1,10 +1,11 @@
+const selectorColor = getComputedStyle(document.documentElement).getPropertyValue("--selectorColor");
+
 const showBox = (index) => {
     // Function to change which element is displayed in the side panel
     // Also changes the colours of the numbered circles to give the user
     // a visual cue of how the two are related
     const selectElem = document.getElementById('selecter'+index);
     const sidePanelElem = document.getElementById('sidePanel'+index);
-    const selectorColor = getComputedStyle(selectElem).getPropertyValue("--baseColor");
     Array.from(document.getElementsByClassName("sidePanel")).map(elem => {
         elem.style.display="none";
     });
@@ -28,10 +29,10 @@ window.addEventListener('resize', () => {
     document.documentElement.style.setProperty('--vh', vh+'px');
 });
 
-// Add even listeners to the numbered circles
+// Add even listeners to the numbered circles and reset button
 Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
     document.getElementById(elem.id).addEventListener("click",() => {
-        showBox(index+1);
+        showBox(index);
     });
 });
 
@@ -39,11 +40,31 @@ Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
 document.getElementById("startHereid").addEventListener("click", function(event){
     document.getElementById("instructions").style.display="block";
     const startHereElem = document.getElementById(event.path[0].id);
-    const selectorColor = getComputedStyle(startHereElem).getPropertyValue("--baseColor");
     startHereElem.style.color="white";
     startHereElem.style.backgroundColor=selectorColor;
     startHereElem.style.borderColor="white";
 });
+
+const buttonPress = (id) => {
+    const elem = document.getElementById(id);
+    elem.addEventListener("mousedown", ()=> {
+        elem.style.color="white";
+        elem.style.backgroundColor=selectorColor;
+        elem.style.borderColor="white";
+    });
+    elem.addEventListener("touchstart",() => {
+        elem.style.color="white";
+        elem.style.backgroundColor=selectorColor;
+        elem.style.borderColor="white";
+    }, {passive: true});
+    elem.addEventListener("mouseup", () => {
+        elem.style.color=selectorColor;
+        elem.style.backgroundColor="white";
+        elem.style.borderColor=selectorColor;
+    })
+};
+
+/*buttonPress("selecter0");*/
 
 //Add event listeners to the Outer ring icons for funders etc. Works for mouse press
 // and finger tap on mobile
@@ -73,7 +94,6 @@ Array.from(document.getElementsByClassName("closeBtn")).map(elem => {
         document.getElementById(idToClose).style.display = "none";
         if (idToClose == "instructions"){
             startHereElem = document.getElementById("startHereid");
-            const selectorColor = getComputedStyle(startHereElem).getPropertyValue("--baseColor");
             startHereElem.style.color=selectorColor;
             startHereElem.style.backgroundColor="white";
             startHereElem.style.borderColor=selectorColor;
