@@ -19,21 +19,14 @@
     }
 }
 
-@media (max-aspect-ratio:7/10) {
-    :root{
-        --sideBoxUnits: calc(0.015 * var(--sideBoxWidth));
-    }
-}
-
-
 *{
     box-sizing: border-box;
     font-family: "Lato";
 }
 
 html, body{
-    background-color: cornsilk;
     height: 100%;
+    background-color: cornsilk;
 }
 
 p{
@@ -91,7 +84,7 @@ h1{
     padding: 0.5%;
     border: calc(var(--units)) var(--selectorColor) solid;
     border-radius: 0.5em;
-    font-size: calc(4 * var(--units));
+    font-size: calc(3.5 * var(--units));
     color: var(--selectorColor);
     background-color: white;
     z-index: 6;
@@ -185,16 +178,16 @@ h1{
 .roundButtons{
     position: absolute;
     display: flex;
-    font-size: calc(3 * var(--units));
+    align-items: center;
+    justify-content: center;
+    font-size: calc(3.5 * var(--units));
     height: 8%;
     width: 8%;
     border-width: calc(0.8 * var(--units));
     border-color: var(--selectorColor);
     border-style: solid;
     border-radius: 50%;
-    padding-top: calc(0.2 * var(--units));
     z-index: 2;
-    justify-content: center;
     background-color: white;
     color: var(--selectorColor);
 }
@@ -612,8 +605,24 @@ ol{
     }
 }
 
+@media (max-aspect-ratio:7/10) {
+    :root{
+        --sideBoxUnits: calc(0.015 * var(--sideBoxWidth));
+    }
+}
 
-@media only screen and (max-width:1000px){
+@media (min-aspect-ratio:8/10) and (max-aspect-ratio:20/19){
+    .roundButtons{
+        border-width: calc(0.65 * var(--units));
+        font-size: calc(3 * var(--units));
+    }
+    .bigButtons{
+        font-size: calc(3 * var(--units));
+    }
+}
+
+
+@media (max-width:1000px){
     html, body{
         height: 100vh;
     }
