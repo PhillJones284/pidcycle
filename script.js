@@ -43,7 +43,7 @@ Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
 
 //Add event listener for help button
 document.getElementById("startHereid").addEventListener("click", function(event){
-    document.getElementById("instructions").style.display="block";
+    document.getElementById("instructions").style.display="flex";
     const startHereElem = document.getElementById(event.path[0].id);
     startHereElem.style.color="white";
     startHereElem.style.backgroundColor=selectorColor;
