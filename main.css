@@ -1,27 +1,30 @@
 :root{
-    --titleSize: calc(6 * var(--vh));
-    --topOfDiag: calc(3 * var(--titleSize));
-    --diagHeight: calc(100 * var(--vh) - var(--topOfDiag));
-    --diagWidth: 70vw;
-    --availWidth: var(--diagWidth) * 0.90;
-    --availHeight: var(--diagHeight) * 0.98;
-    --availLength: min(var(--availWidth), var(--availHeight));
-    --sideBoxWidth: calc(100vw - var(--diagWidth));
-    --sideBoxScaleLength: min(calc(0.01 * var(--sideBoxWidth)), calc(0.0084 * var(--diagHeight)));
     --selectorColor: #bd3636;
     --mbGrey: #4D4E50;
     --mbDkMint: #0097a7;
+    --maxDiagHeight: calc(80 * var(--vh));
+    --maxDiagWidth: calc(65 * var(--vw));
+    --units: min(var(--vh), var(--vw));
+    --diagSize: min(var(--maxDiagHeight), var(--maxDiagWidth) );
+    --sideBoxWidth: calc( 30 * var(--vw) );
+    --sideBoxUnits: min(calc(0.01 * var(--sideBoxWidth)), calc(0.0084 * var(--maxDiagHeight)));
 }
 
 @media (orientation:portrait){
     :root{
-        --titleSize: 5vw;
-        --diagHeight: calc(70 * var(--vh) - var(--topOfDiag));
-        --diagWidth: 100vw;
-        --sideBoxWidth: 90%;
-        --sideBoxScaleLength: 0.5vw;
+        --maxDiagHeight: calc(53 * var(--vh));
+        --maxDiagWidth: calc(90 * var(--vw));
+        --diagSize: min(var(--maxDiagHeight), var(--maxDiagWidth) );
+        --sideBoxUnits: calc(0.011 * var(--sideBoxWidth));
     }
 }
+
+@media (max-aspect-ratio:7/10) {
+    :root{
+        --sideBoxUnits: calc(0.015 * var(--sideBoxWidth));
+    }
+}
+
 
 *{
     box-sizing: border-box;
@@ -30,27 +33,65 @@
 
 html, body{
     background-color: cornsilk;
+    height: 100%;
+}
+
+p{
+    font-family: 'Lato';
+}
+
+.gridContainer{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 2% 68% 28% 2%;
+    grid-template-rows: 2% 3% 12% 55% 24%;
+}
+
+.mbLogoContainer{
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    top: calc(2 * var(--vh));
+    left: 2vw;
+    width: 16vw;
+}
+
+.mbLogoContainer img{
+    width: 100%;
+    z-index: 0;
+}
+
+.cycleTitle{
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 2;
 }
 
 .content{
-    display: flex;
-    align-items: flex-start;
+    grid-row: 4 / span 2;
+    grid-column: 2 / span 1;
+}
+
+.sidePanelContainer{
+    grid-row: 4 / span 1;
+    grid-column: 3 / span 1;
+    z-index: 1;
 }
 
 h1{
     text-align: center;
     font-family: 'Noto Sans JP';
-    font-size: var(--titleSize);
+    font-size: calc(6 * var(--vh));;
     color: var(--mbGrey);
+    margin: auto;
 }
 
 .bigButtons{
     position: absolute;
-    top: calc(0.02 * var(--availLength));
+    top: calc(2 * var(--units));
     padding: 0.5%;
-    border: 0.25em var(--selectorColor) solid;
+    border: calc(var(--units)) var(--selectorColor) solid;
     border-radius: 0.5em;
-    font-size: calc(0.05 * var(--availLength));
+    font-size: calc(4 * var(--units));
     color: var(--selectorColor);
     background-color: white;
     z-index: 6;
@@ -74,42 +115,47 @@ h1{
 #instructions{
     display: none;
     position: absolute;
-    top: 21%;
-    left: calc((0.5 * var(--diagWidth) ) - (0.4 * var(--availLength)));
-    width: calc(0.8 * var(--availLength));
-    font-size: calc(0.022 * var(--availLength));;
-    border: 0.5em var(--mbGrey) solid;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    font-size: calc(1.8 * var(--units));;
+    border: calc(1 * var(--units)) var(--mbGrey) solid;
     background-color: white;
-    border-radius: calc(0.05 * var(--availLength));
-    padding: calc(0.06 * var(--availLength));
-    padding-top: calc(0.03 * var(--availLength));
+    border-radius: calc(4 * var(--units));
+    padding: calc(4.5 * var(--units));
+    padding-top: calc(2.5 * var(--units));
     z-index: 7;
 }
 
+#instructions img{
+    height: 90%;
+    width: 90%;
+}
+
 #instructions .closeBtn{
-    right: calc(0.02 * var(--availLength));
-    top: calc(0.02 * var(--availLength));
+    right: calc(1.5 * var(--units));
+    top: calc(1.5 * var(--units));
 }
 
 .instrucHeader{
     font-family: 'Noto Sans JP';
     color: var(--mbDkMint);
-    font-size: calc(0.05 * var(--availLength));
-    margin-bottom: calc(0.02 * var(--availLength));;
+    font-size: calc(4.5 * var(--units));
+    margin-bottom: calc(1.5 * var(--units));;
 }
 
 .instrucSubHeader{
     font-family: 'Noto Sans JP';
     color: var(--mbDkMint);
-    font-size: calc(0.03 * var(--availLength));
-    margin-bottom: calc(0.01 * var(--availLength));;
+    font-size: calc(2.5 * var(--units));
+    margin-bottom: calc(0.8 * var(--units));;
 }
 
 .guideRow{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: calc(0.01 * var(--availLength));
+    gap: calc(0.8 * var(--units));
 }
 
 .guideImgContainer{
@@ -124,55 +170,29 @@ h1{
     flex-basis: 80%;
 }
 
-#mbLogoContainer{
-    position: absolute;
-    top: calc(2 * var(--vh));
-    left: 2vw;
-    /*width: max(12vw, calc(0.45 * var(--availLength)) );*/
-    width: 16vw;
-}
-
-#mbLogoContainer img{
-    width: 100%;
+.diagram{
+    position: relative; 
     z-index: 0;
+    width: fit-content;
+    margin: auto;
 }
 
-p{
-    font-family: 'Lato';
-}
-
-#diagram{
-    display: inline-block;
-    height: var(--diagHeight);
-    width: var(--diagWidth);
-    left: 0;
-}
-
-#lifecycleImage{
-    position: absolute; 
-    width: var(--availLength);
-    height: var(--availLength);
-    top: calc(var(--topOfDiag) + (0.47 * var(--diagHeight) ) - (0.5 * var(--availLength)) );
-    left: calc((0.5 * var(--diagWidth) ) - (0.5 * var(--availLength)) );
-    z-index: 0;
-}
-
-#lifecycleImage img{
-    height: 100%;
-    width: 100%;
+.diagram img{
+    width: var(--diagSize);
+    height: var(--diagSize);
 }
 
 .roundButtons{
     position: absolute;
     display: flex;
-    font-size: calc( 0.04 * var(--availLength));
+    font-size: calc(3 * var(--units));
     height: 8%;
     width: 8%;
-    border-width: calc(0.01 * var(--availLength));
+    border-width: calc(0.8 * var(--units));
     border-color: var(--selectorColor);
     border-style: solid;
     border-radius: 50%;
-    padding-top: 0.5%;
+    padding-top: calc(0.2 * var(--units));
     z-index: 2;
     justify-content: center;
     background-color: white;
@@ -256,13 +276,13 @@ p{
     min-height: 20%;
     gap: 3%;
     background-color: white;
-    border-width: 0.2em;
+    border-width: calc(1 * var(--units));
     border-color: var(--mbDkMint);
     border-style: solid;
-    padding: 0.4em;
-    padding-left: 1em;
+    padding: calc(2 * var(--units));
+    padding-left: calc(2 * var(--units));
     border-radius: 0.7em;
-    font-size: calc(0.05 * var(--availLength));
+    font-size: calc(4 * var(--units));
     z-index: 10;
 }
 
@@ -271,7 +291,13 @@ p{
 }
 
 .legendPopLogo{
-    width: calc(0.1 * var(--availLength));
+    width: fit-content;
+    height: fit-content;
+}
+
+.legendPopLogo img{
+    width: calc(6 * var(--units));
+    height: auto;
 }
 
 #legPopSelFunder{
@@ -282,6 +308,10 @@ p{
 #legendPopFunder{
     top: 18%;
     left: 5%;
+}
+
+#legendPopFunder img{
+    width: calc(5 * var(--unts));
 }
 
 #legPopSelInst1{
@@ -315,11 +345,11 @@ p{
 }
 
 #legendPopPlatform .legendPopLabel, #legendPopInst1 .legendPopLabel, #legendPopInst2 .legendPopLabel{
-    font-size: calc(0.035 * var(--availLength));
+    font-size: calc(2.5 * var(--units));
 }
 
 #legendPopInst1 .legendPopLabel, #legendPopInst2 .legendPopLabel{
-    line-height: calc(0.1 * var(--availLength));
+    line-height: calc(8 * var(--units));
 }
 
 #legPopSelXref{
@@ -335,7 +365,7 @@ p{
 }
 
 #legendPopXref .legendPopLogo{
-    width: calc(0.08 * var(--availLength));
+    width: calc(6 * var(--units));
 }
 
 #legPopSelDatacite{
@@ -363,8 +393,7 @@ p{
 }
 
 #legendPopRaid .legendPopLabel{
-    font-size: calc(0.035 * var(--availLength));
-    padding-bottom: 2%;
+    font-size: calc(2.5 * var(--units));
 }
 
 #legPopSelOrcid{
@@ -394,26 +423,20 @@ p{
 }
 
 #legendPopRor .legendPopLabel{
-    font-size: calc(0.035 * var(--availLength));
-    padding-bottom: 2%;
+    font-size: calc(3 * var(--units));
 }
 
 .closeBtn{
     position: absolute;
-    /*--elemWidth: 100%;
-    --elemHeight: 100%;
-    --scaleLength: calc(0.01 * max(var(--elemWidth, var(--elemHeight))));
-    right: calc(2 * var(--scaleLength));
-    top: calc(2 * var(--scaleLength));*/
-    right: calc(0.01 * var(--availLength));
-    top: calc(0.01 * var(--availLength));
-    border-width: calc(0.005 * var(--availLength));
+    right: calc(0.8 * var(--units));
+    top: calc(0.8 * var(--units));
+    border-width: calc(0.5 * var(--units));
     border-color: black;
     border-style: solid;
-    border-radius: calc(0.01 * var(--availLength));
-    font-size: calc(0.03 * var(--availLength));
+    border-radius: calc(0.8 * var(--units));
+    font-size: calc(2.5 * var(--units));
     text-align: center;
-    padding: calc(0.002 * var(--availLength)) calc(0.005 * var(--availLength));
+    padding: calc(0.16 * var(--units)) calc(0.2 * var(--units));
     background-color: rgb(200, 200, 200);
 }
 
@@ -421,24 +444,19 @@ p{
     cursor: pointer;
 }
 
-.sidePanelContainer{
-    z-index: 1;
-}
-
 .sidePanel{
     display: none;
     position: relative;
     flex-wrap: wrap;
-    width: var(--sideBoxWidth);
-    max-height: calc(120 * var(--sideBoxScaleLength));
+    width: 100%;
     border: 0 var(--mbGrey) solid;
-    border-width: calc(0.012 * var(--sideBoxWidth));
-    border-radius: calc(0.08 * var(--sideBoxWidth));
-    padding: calc(6 * var(--sideBoxScaleLength));
+    border-width: calc(2 * var(--sideBoxUnits));
+    border-radius: calc(10 * var(--sideBoxUnits));
+    padding: calc(6 * var(--sideBoxUnits));
     margin-top: 2%;
     margin-right: 2%;
     background-color: white;
-    font-size: calc(4.5 * var(--sideBoxScaleLength));
+    font-size: calc(4.5 * var(--sideBoxUnits));
     z-index: 2;
 }
 
@@ -450,12 +468,12 @@ p{
     flex-basis: 100%;
     display: flex;
     align-items:flex-start;
-    gap: calc(5 * var(--sideBoxScaleLength));
+    gap: calc(4 * var(--sideBoxUnits));
 }
 
 .sidePanelTitle{
     font-family: 'Noto Sans JP';
-    font-size: calc(5.5 * var(--sideBoxScaleLength));
+    font-size: calc(5.5 * var(--sideBoxUnits));
 }
 
 .sidePanelLeftArrow{
@@ -464,9 +482,9 @@ p{
     border-top: 0 solid transparent;
     border-bottom: 0 solid transparent; 
     border-right: 0 solid var(--selectorColor);
-    border-top-width: calc(4 * var(--sideBoxScaleLength));
-    border-bottom-width: calc(4 * var(--sideBoxScaleLength));
-    border-right-width: calc(3 * var(--sideBoxScaleLength));
+    border-top-width: calc(4 * var(--sideBoxUnits));
+    border-bottom-width: calc(4 * var(--sideBoxUnits));
+    border-right-width: calc(3 * var(--sideBoxUnits));
 }
 
 .sidePanelRightArrow{
@@ -475,9 +493,9 @@ p{
     border-top: 0 solid transparent;
     border-bottom: 0 solid transparent; 
     border-left: 0 solid var(--selectorColor);
-    border-top-width: calc(4 * var(--sideBoxScaleLength));
-    border-bottom-width: calc(4 * var(--sideBoxScaleLength));
-    border-left-width: calc(3 * var(--sideBoxScaleLength));
+    border-top-width: calc(4 * var(--sideBoxUnits));
+    border-bottom-width: calc(4 * var(--sideBoxUnits));
+    border-left-width: calc(3 * var(--sideBoxUnits));
     margin-left: auto;
 }
 
@@ -487,35 +505,35 @@ p{
 
 .legend{
     display: block;
-    max-height: calc(114 * var(--sideBoxScaleLength));
-    font-size: calc(4 * var(--sideBoxScaleLength));
+    max-height: calc(114 * var(--sideBoxUnits));
+    font-size: calc(3.8 * var(--sideBoxUnits));
 }
 
 #legendTitleTop{
-    margin-bottom: calc(3 * var(--sideBoxScaleLength));
+    margin-bottom: calc(3 * var(--sideBoxUnits));
 }
 
 #legendTitleBottom{
-    margin-bottom: calc(3 * var(--sideBoxScaleLength));
-    margin-top: calc(4 * var(--sideBoxScaleLength));
+    margin-bottom: calc(3 * var(--sideBoxUnits));
+    margin-top: calc(4 * var(--sideBoxUnits));
 }
 
 .legendCells{
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    gap: calc(0.7 * var(--sideBoxScaleLength));
+    gap: calc(0.7 * var(--sideBoxUnits));
 }
 
 .legendCellLeft{
-    --iconSize: calc(5.8 * var(--sideBoxScaleLength));
+    --iconSize: calc(5.8 * var(--sideBoxUnits));
     width: var(--iconSize);
     height: var(--iconSize);
     flex-basis: 10%;
 }
 
 #outputCell{
-    height: calc(12 * var(--sideBoxScaleLength));
+    height: calc(12 * var(--sideBoxUnits));
 }
 
 .legendCellLeft img{
@@ -552,8 +570,17 @@ ol{
 }
 
 @media (orientation:portrait) {
+    h1{
+        font-size: calc(5.5 * var(--vw));
+    }
     .content{
-        display: block;
+        grid-row: 4 / span 1;
+        grid-column: 2 / span 2;
+    }
+    .sidePanelContainer{
+        grid-row: 5 / span 2;
+        grid-column: 2 / span 2;
+        z-index: 1;
     }
     .reset{
         top: auto;
@@ -563,17 +590,12 @@ ol{
         gap: 3%;
         width: 90%;
         margin: auto;
-        border-radius: 2em;
     }
     .leftSidePanelBox, .benefits{
         flex-basis: 48.5%;
     }
     .benefits{
         margin-top: 2.5%;
-    }
-    .legend{
-        padding: calc(3 * var(--sideBoxScaleLength));
-        font-size: calc(3.8 * var(--sideBoxScaleLength));
     }
     .legendContent{
         display: flex;
@@ -590,28 +612,10 @@ ol{
     }
 }
 
+
 @media only screen and (max-width:1000px){
     html, body{
         height: 100vh;
     }
-}
-
-@media only screen and (max-width:800px){
-    #cycleTitle{
-        padding: calc(1 * var(--vh));
-    }
-    #lifecycleImage{
-        top: calc(var(--topOfDiag) + (0.5 * var(--diagHeight) ) - (0.5 * var(--availLength)) );
-    }
-}
-
-@media (max-aspect-ratio:1/1) and (min-aspect-ratio:3/5) {
-    .sidePanelTitle{
-        font-size: calc(4.5 * var(--sideBoxScaleLength));
-    }
-    .notes{
-        font-size: calc(3.2 * var(--sideBoxScaleLength));
-    }
-    
 }
 

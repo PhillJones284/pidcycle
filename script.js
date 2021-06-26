@@ -29,6 +29,14 @@ window.addEventListener('resize', () => {
     document.documentElement.style.setProperty('--vh', vh+'px');
 });
 
+let vw = window.innerWidth * 0.01;
+document.documentElement.style.setProperty('--vw', vw+'px');
+
+window.addEventListener('resize', () => {
+    let vw = window.innerWidth * 0.01;
+    document.documentElement.style.setProperty('--vw', vw+'px');
+});
+
 // Add even listeners to the numbered circles and reset button
 Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
     document.getElementById(elem.id).addEventListener("click",() => {
