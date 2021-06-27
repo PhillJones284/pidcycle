@@ -1,135 +1,110 @@
 const selectorColor = getComputedStyle(document.documentElement).getPropertyValue("--selectorColor");
 
+const recolorSelecter = (elem, closed = false) => {
+    // change the colour of buttons to show active / inactive status
+    if (closed) {
+        elem.style.borderColor=selectorColor;
+        elem.style.backgroundColor="white";
+        elem.style.color=selectorColor;
+    } else {
+    elem.style.color="white";
+    elem.style.backgroundColor=selectorColor;
+    elem.style.borderColor="white";
+    }
+};
+
 const showBox = (index) => {
-    // Function to change which element is displayed in the side panel
+    // Change which element is displayed in the side panel
     // Also changes the colours of the numbered circles to give the user
     // a visual cue of how the two are related
     const selectElem = document.getElementById('selecter'+index);
     const sidePanelElem = document.getElementById('sidePanel'+index);
-    Array.from(document.getElementsByClassName("sidePanel")).map(elem => {
-        elem.style.display="none";
-    });
+    Array.prototype.map.call(document.getElementsByClassName("sidePanel"),
+        elem => elem.style.display="none");
     sidePanelElem.style.display="flex";
-    Array.from(document.getElementsByClassName("selecter")).map(elem => {
-        elem.style.borderColor=selectorColor;
-        elem.style.backgroundColor="white";
-        elem.style.color=selectorColor;
-    });
-    selectElem.style.borderColor="white";
-    selectElem.style.backgroundColor=selectorColor;
-    selectElem.style.color="white";
+    Array.prototype.map.call(document.getElementsByClassName("selecter"),
+        elem => recolorSelecter(elem, closed=true));
+    recolorSelecter(selectElem);
 };
 
-// Redefine window height for compatibility across all mobile devices
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', vh+'px');
-
-let vw = window.innerWidth * 0.01;
-document.documentElement.style.setProperty('--vw', vw+'px');
-
-window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    let vw = window.innerWidth * 0.01;
+// Redefine window height for compatibility across mobile devices
+// Enables dynamic resizing when toggle scrolling the address bar
+const updateWindowSize = () => {
+    const vh = window.innerHeight * 0.01;
+    const vw = window.innerWidth * 0.01;
     document.documentElement.style.setProperty('--vh', vh+'px');
     document.documentElement.style.setProperty('--vw', vw+'px');
-});
+};
+updateWindowSize();
+window.addEventListener('resize', updateWindowSize);
 
-// Add even listeners to the numbered circles and reset button
-Array.from(document.getElementsByClassName("selecter")).map((elem,index) => {
-    document.getElementById(elem.id).addEventListener("click",() => {
+// Add event listeners to the numbered circles and reset button
+Array.prototype.map.call(document.getElementsByClassName("selecter"), (elem, index) => {
+    elem.addEventListener("click",() => {
         showBox(index);
     });
 });
 
 //Add event listener for help button
-document.getElementById("startHereid").addEventListener("click", function(event){
-    document.getElementById("instructions").style.display="flex";
-    const startHereElem = document.getElementById(event.path[0].id);
-    startHereElem.style.color="white";
-    startHereElem.style.backgroundColor=selectorColor;
-    startHereElem.style.borderColor="white";
+const addStartHereListener = () => {
+    const elem = document.getElementById("startHereid");
+    elem.addEventListener("click", event => {
+        document.getElementById("instructions").style.display="flex";
+        recolorSelecter(elem);
+    });
+}
+addStartHereListener();
+
+//Add event listeners to the Outer ring icons for funders etc. Works for mouse button down
+// and finger press on mobile
+Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), elem => {
+    const eventAction = (event, displayValue) => {
+        const legItem = event.path[0].id.split('legPopSel')[1];
+        const legElem = 'legendPop'+legItem;
+        document.getElementById(legElem).style.display = displayValue;
+    };
+    elem.addEventListener("mousedown", event => eventAction(event, "flex"));
+    elem.addEventListener("mouseup", event => eventAction(event, "none"));
+    elem.addEventListener("touchstart", event => eventAction(event, "flex"), {passive:true});
 });
 
-const buttonPress = (id) => {
-    const elem = document.getElementById(id);
-    elem.addEventListener("mousedown", ()=> {
-        elem.style.color="white";
-        elem.style.backgroundColor=selectorColor;
-        elem.style.borderColor="white";
-    });
-    elem.addEventListener("touchstart",() => {
-        elem.style.color="white";
-        elem.style.backgroundColor=selectorColor;
-        elem.style.borderColor="white";
-    }, {passive: true});
-    elem.addEventListener("mouseup", () => {
-        elem.style.color=selectorColor;
-        elem.style.backgroundColor="white";
-        elem.style.borderColor=selectorColor;
-    })
-};
+//The close button on legend popups. Enables user to close help box.
+// Also gives the user a way out if they
+// slide their mouse or finger off popup elements before letting go
 
-/*buttonPress("selecter0");*/
-
-//Add event listeners to the Outer ring icons for funders etc. Works for mouse press
-// and finger tap on mobile
-Array.from(document.getElementsByClassName("legendPopSelecter")).map(elem => {
-    document.getElementById(elem.id).addEventListener("mousedown", function(event){
-        const legItem = event.path[0].id.split('legPopSel')[1];
-        const legElem = 'legendPop'+legItem;
-        document.getElementById(legElem).style.display = "flex";
-    });
-    document.getElementById(elem.id).addEventListener("touchstart", function(event){
-        const legItem = event.path[0].id.split('legPopSel')[1];
-        const legElem = 'legendPop'+legItem;
-        document.getElementById(legElem).style.display = "flex";
-    }, {passive: true});
-    document.getElementById(elem.id).addEventListener("mouseup", function(event){
-        const legItem = event.path[0].id.split('legPopSel')[1];
-        const legElem = 'legendPop'+legItem;
-        document.getElementById(legElem).style.display = "none";
-    });
-});
-
-//The close button on legend popups. Designed to give the user a way out if they
-// slide their mouse or finger off the element before letting go
-Array.from(document.getElementsByClassName("closeBtn")).map(elem => {
-    document.getElementById(elem.id).addEventListener("click", event => {
+Array.prototype.map.call(document.getElementsByClassName("closeBtn"), elem => {
+    elem.addEventListener("click", event => {
         const idToClose = event.path[1].id;
         document.getElementById(idToClose).style.display = "none";
         if (idToClose == "instructions"){
             startHereElem = document.getElementById("startHereid");
-            startHereElem.style.color=selectorColor;
-            startHereElem.style.backgroundColor="white";
-            startHereElem.style.borderColor=selectorColor;
+            recolorSelecter(startHereElem, closed=true);
         }
     });
 });
 
-//The left arrow in the side panel moves side panel text back one stage in the cylce
-Array.from(document.getElementsByClassName("sidePanelLeftArrow")).map((elem,index) => {
-    document.getElementById(elem.id).addEventListener("click", () => {
-        let targetNumber;
-        if (index == 0){
-            targetNumber = 10;
-        } else {
-            targetNumber = index;
-        }
-        const selecterID = 'selecter'+targetNumber;
+//Left arrow in the side panel to move side panel text back one stage
+Array.prototype.map.call(document.getElementsByClassName("sidePanelLeftArrow"), (elem,index) => {
+    let targetNumber;
+    if (index == 0){
+        targetNumber = 10;
+    } else {
+        targetNumber = index;
+    }
+    elem.addEventListener("click",()=>{
         showBox(targetNumber);
     });
 });
 
 //Right arrow in the side panel to move side panel text forward one stage
-Array.from(document.getElementsByClassName("sidePanelRightArrow")).map((elem,index) => {
-    document.getElementById(elem.id).addEventListener("click", function(elem){
-        let targetNumber;
-        if (index == 9){
-            targetNumber = 1;
-        } else {
-            targetNumber = index+2;
-        }
-        const selecterID = 'selecter'+targetNumber;
+Array.prototype.map.call(document.getElementsByClassName("sidePanelRightArrow"), (elem, index) =>{
+    let targetNumber;
+    if (index == 9){
+        targetNumber = 1;
+    } else {
+        targetNumber = index+2;
+    }
+    elem.addEventListener("click",()=>{
         showBox(targetNumber);
     });
 });
