@@ -280,7 +280,7 @@ h1{
     position: absolute;
 }
 
-.legendPopSelecter:hover{
+.legendPopSelecter:hover, .panelSelecter:hover{
     cursor: pointer;
 }
 
