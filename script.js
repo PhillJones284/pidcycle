@@ -68,10 +68,19 @@ Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), e
     elem.addEventListener("touchstart", event => eventAction(event, "flex"), {passive:true});
 });
 
+Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem => {
+    console.log(elem);
+    elem.addEventListener("click", event => {
+        console.log(event);
+        const panelItem = event.path[0].id.split('panelSel')[1];
+        const panelElem = 'panel'+panelItem;
+        document.getElementById(panelElem).style.display = "block";
+    });
+});
+
 //The close button on legend popups. Enables user to close help box.
 // Also gives the user a way out if they
 // slide their mouse or finger off popup elements before letting go
-
 Array.prototype.map.call(document.getElementsByClassName("closeBtn"), elem => {
     elem.addEventListener("click", event => {
         const idToClose = event.path[1].id;

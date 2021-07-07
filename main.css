@@ -106,7 +106,7 @@ h1{
     cursor: pointer;
 }
 
-#instructions{
+.overlayPanel{
     display: none;
     position: absolute;
     top: 7%;
@@ -121,12 +121,34 @@ h1{
     z-index: 50;
 }
 
+.diagram .overlayRegPanelTitle{
+    display: flex;
+}
+
+.diagram .overlayRegPanelTitle img{
+    height: calc(6 * var(--units));
+    width: auto;
+}
+
+.diagram .overlayRegPanelTitle{
+    align-items: center;
+    font-family: 'Open Sans';
+    font-size: calc(2.5 * var(--units));
+    color: #218ac5;
+}
+
+#instructions{
+    top: 7%;
+    left: 10%;
+    width: 80%;
+}
+
 #instructions img{
     height: 90%;
     width: 90%;
 }
 
-#instructions .closeBtn{
+.overlayPanel .closeBtn{
     right: calc(1.5 * var(--units));
     top: calc(1.5 * var(--units));
 }
@@ -161,7 +183,7 @@ h1{
 }
 
 .guideTextContainer{
-    flex-basis: 80%;
+    flex-basis: calc(85% - (0.8*var(--units)));
 }
 
 .diagram{
@@ -353,28 +375,55 @@ h1{
     height: 8%;
 }
 
+#panelSelXref{
+    top: 38.5%;
+    left: 40%;
+    width: 6%;
+    height: 8%;
+}
+/*
 #legendPopXref{
     top: 18%;
     left: 2%;
 }
+*/
 
 #legendPopXref .legendPopLogo{
     width: calc(6 * var(--units));
 }
 
+/*
 #legPopSelDatacite{
     top: 38.5%;
     left: 53.5%;
     width: 8%;
     height: 8%;
 }
+*/
+
+#panelSelDatacite{
+    top: 38.5%;
+    left: 53.5%;
+    width: 8%;
+    height: 8%;
+}
+
 
 #legendPopDatacite{
     top: 18%;
     left: 30%;
 }
 
+/*
 #legPopSelRaid{
+    top: 47.5%;
+    left: 45.5%;
+    width: 9.5%;
+    height: 5.5%;
+}
+*/
+
+#panelSelRaid{
     top: 47.5%;
     left: 45.5%;
     width: 9.5%;
@@ -389,7 +438,7 @@ h1{
 #legendPopRaid .legendPopLabel{
     font-size: calc(2.5 * var(--units));
 }
-
+/*
 #legPopSelOrcid{
     top: 54%;
     left: 39.6%;
@@ -397,13 +446,32 @@ h1{
     height: 7%;
     border-radius: 50%;
 }
+*/
+
+#panelSelOrcid{
+    top: 54%;
+    left: 39.6%;
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
+}
+
 
 #legendPopOrcid{
     top: 33%;
     left: 2%;
 }
 
+/*
 #legPopSelRor{
+    top: 54%;
+    left: 52.5%;
+    width: 9.5%;
+    height: 7%;
+}
+*/
+
+#panelSelRor{
     top: 54%;
     left: 52.5%;
     width: 9.5%;
@@ -537,7 +605,7 @@ h1{
 }
 
 .legendCellRight{
-    flex-basis: 88%;
+    flex-basis: calc(90% - (0.7 * var(--sideBoxUnits)));
 }
 
 .logos{
