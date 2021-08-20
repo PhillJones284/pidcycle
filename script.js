@@ -59,7 +59,7 @@ addStartHereListener();
 // and finger press on mobile
 Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), elem => {
     const eventAction = (event, displayValue) => {
-        const legItem = event.path[0].id.split('legPopSel')[1];
+        const legItem = elem.id.split('legPopSel')[1];
         const legElem = 'legendPop'+legItem;
         document.getElementById(legElem).style.display = displayValue;
     };
@@ -69,10 +69,11 @@ Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), e
 });
 
 Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem => {
-    console.log(elem);
     elem.addEventListener("click", event => {
-        console.log(event);
-        const panelItem = event.path[0].id.split('panelSel')[1];
+        const panelItem = elem.id.split('panelSel')[1];
+        if (panelItem.startsWith("Side")) {
+            panelItem = panelItem.split("Side")[1];
+        }
         const panelElem = 'panel'+panelItem;
         document.getElementById(panelElem).style.display = "block";
     });
@@ -83,12 +84,7 @@ Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem 
 // slide their mouse or finger off popup elements before letting go
 Array.prototype.map.call(document.getElementsByClassName("closeBtn"), elem => {
     elem.addEventListener("click", event => {
-        const idToClose = event.path[1].id;
-        document.getElementById(idToClose).style.display = "none";
-        if (idToClose == "instructions"){
-            startHereElem = document.getElementById("startHereid");
-            recolorSelecter(startHereElem, closed=true);
-        }
+        elem.parentElement.style.display = "none";
     });
 });
 
