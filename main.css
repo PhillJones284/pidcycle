@@ -27,6 +27,7 @@
 html, body{
     height: 100%;
     background-color: cornsilk;
+    overflow: hidden;
 }
 
 p{
@@ -122,6 +123,21 @@ h1{
     z-index: 50;
 }
 
+.diagram{
+    display: block;
+    position: relative; 
+    z-index: 0;
+    /*width: -moz-fit-content;
+    width: fit-content;*/
+    width: var(--diagSize);
+    margin: auto;
+}
+
+.diagram img{
+    width: var(--diagSize);
+    height: var(--diagSize);
+}
+
 .diagram .overlayRegPanelTitle{
     display: flex;
     align-items: center;
@@ -190,20 +206,6 @@ h1{
 
 .guideTextContainer{
     flex-basis: calc(85% - (0.8*var(--units)));
-}
-
-.diagram{
-    display: block;
-    position: relative; 
-    z-index: 0;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: auto;
-}
-
-.diagram img{
-    width: var(--diagSize);
-    height: var(--diagSize);
 }
 
 .roundButtons{

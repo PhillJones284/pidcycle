@@ -12,114 +12,103 @@
   </g>
   <g id="Inner_arrows">
     <g id="little_arrows">
-      <g id="little_arrows_bottom">
+      <g id="down_arrow">
         <g>
           <path d="M217.415,278.528 L217.326,312.449" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
           <g>
+            <path d="M212.38,312.436 L217.291,325.637 L222.271,312.462 z" fill="#47CCCC"/>
             <path d="M212.38,305.899 L217.291,317 L222.271,305.899 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
           </g>
         </g>
         <path d="M217.55,278.411 L217.281,314.271" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
       </g>
-      <g id="little_arrows_left">
-        <g id="little_arrows_left_out">
+      <g>
+        <g id="leftout_arrow">
           <g>
-            <path d="M170.497,226.532 L132.895,226.532" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
+            <path d="M159.497,226.532 L121.895,226.532" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
             <g>
-              <path d="M132.895,221.586 L119.708,226.532 L132.895,231.477 z" fill="#47CCCC"/>
-              <path d="M132.895,221.586 L119.708,226.532 L132.895,231.477 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+              <path d="M121.895,221.586 L108.708,226.532 L121.895,231.477 z" fill="#47CCCC"/>
+              <path d="M121.895,221.586 L108.708,226.532 L121.895,231.477 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
             </g>
           </g>
-          <path d="M170.625,226.5 L133.206,226.532" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+          <path d="M159.403,226.441 L122.206,226.532" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
         </g>
-        <g id="little_arrows_left_in">
+        <g id="leftout_arrow">
           <g>
-            <path d="M90.459,206.808 L121.223,206.808" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
+            <path d="M101.459,206.808 L132.223,206.808" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
             <g>
-              <path d="M121.223,211.753 L134.411,206.808 L121.223,201.862 z" fill="#47CCCC"/>
-              <path d="M121.223,211.753 L134.411,206.808 L121.223,201.862 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+              <path d="M132.223,211.753 L145.411,206.808 L132.223,201.862 z" fill="#47CCCC"/>
+              <path d="M132.223,211.753 L145.411,206.808 L132.223,201.862 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
             </g>
           </g>
-          <path d="M90.459,206.808 L126.202,206.808" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
-        </g>
-      </g>
-      <g id="little_arrows_right">
-        <g id="little_arrows_right_in">
-          <g>
-            <path d="M354.659,226.522 L315.208,226.522" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
-            <g>
-              <path d="M315.208,221.577 L302.02,226.522 L315.208,231.468 z" fill="#47CCCC"/>
-              <path d="M315.208,221.577 L302.02,226.522 L315.208,231.468 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
-            </g>
-          </g>
-          <path d="M354.659,226.522 L313.307,226.522" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
-        </g>
-        <g id="little_arrows_right_out">
-          <g>
-            <path d="M269.607,206.798 L301.535,206.798" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
-            <g>
-              <path d="M301.535,211.744 L314.723,206.798 L301.535,201.853 z" fill="#47CCCC"/>
-              <path d="M301.535,211.744 L314.723,206.798 L301.535,201.853 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
-            </g>
-          </g>
-          <path d="M269.597,206.798 L305.351,206.798" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+          <path d="M101.459,207.076 L137.202,206.808" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
         </g>
       </g>
-      <g id="little_arrows_top">
-        <g id="little_arrows_top_out">
+      <g>
+        <g id="leftout_arrow">
           <g>
-            <path d="M207.607,165.894 L207.607,132.809" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
+            <path d="M343.659,226.522 L304.208,226.522" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
             <g>
-              <path d="M212.552,132.809 L207.607,119.621 L202.661,132.809 z" fill="#47CCCC"/>
-              <path d="M212.552,132.809 L207.607,119.621 L202.661,132.809 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+              <path d="M304.208,221.577 L291.02,226.522 L304.208,231.468 z" fill="#47CCCC"/>
+              <path d="M304.208,221.577 L291.02,226.522 L304.208,231.468 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
             </g>
           </g>
-          <path d="M207.25,165.894 L207.338,128.808" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+          <path d="M343.659,226.522 L302.307,226.522" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
         </g>
-        <g id="little_arrows_top_in">
+        <g id="leftout_arrow">
           <g>
-            <path d="M227.331,85.283 L227.331,120.324" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
+            <path d="M280.607,206.798 L312.535,206.798" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
             <g>
-              <path d="M222.385,120.324 L227.331,133.512 L232.276,120.324 z" fill="#47CCCC"/>
-              <path d="M222.385,120.324 L227.331,133.512 L232.276,120.324 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+              <path d="M312.535,211.744 L325.723,206.798 L312.535,201.853 z" fill="#47CCCC"/>
+              <path d="M312.535,211.744 L325.723,206.798 L312.535,201.853 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
             </g>
           </g>
-          <path d="M227.062,85.283 L227.331,122.368" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+          <path d="M280.597,206.798 L316.351,206.798" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+        </g>
+      </g>
+      <g>
+        <g id="leftout_arrow">
+          <g>
+            <path d="M207.607,154.894 L207.607,121.809" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
+            <g>
+              <path d="M212.552,121.809 L207.607,108.621 L202.661,121.809 z" fill="#47CCCC"/>
+              <path d="M212.552,121.809 L207.607,108.621 L202.661,121.809 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+            </g>
+          </g>
+          <path d="M207.338,154.894 L207.607,117.808" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+        </g>
+        <g id="leftout_arrow">
+          <g>
+            <path d="M227.331,96.283 L227.331,131.324" fill-opacity="0" stroke="#47CCCC" stroke-width="4.242"/>
+            <g>
+              <path d="M222.385,131.324 L227.331,144.512 L232.276,131.324 z" fill="#47CCCC"/>
+              <path d="M222.385,131.324 L227.331,144.512 L232.276,131.324 z" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
+            </g>
+          </g>
+          <path d="M227.062,96.283 L227.331,133.368" fill-opacity="0" stroke="#47CCCC" stroke-width="12"/>
         </g>
       </g>
     </g>
-    <g id="curved_arrow_topleft">
+    <g>
+      <path d="M221.459,387.474 C157.678,388.677 102.456,356.609 71.825,306.236" fill-opacity="0" stroke="#3397A7" stroke-width="12"/>
+      <g>
+        <path d="M80.489,302.102 L60.8,283.132 L63.161,310.371 z" fill="#3397A7"/>
+        <path d="M80.489,302.102 L60.8,283.132 L63.161,310.371 z" fill-opacity="0" stroke="#3397A7" stroke-width="12"/>
+      </g>
+    </g>
+    <g>
       <path d="M46.568,215.099 C48.422,154.486 79.269,101.675 128.735,72.274" fill-opacity="0" stroke="#3397A7" stroke-width="12"/>
       <g>
         <path d="M132.77,80.985 L151.965,61.515 L124.7,63.563 z" fill="#3397A7"/>
         <path d="M132.77,80.985 L151.965,61.515 L124.7,63.563 z" fill-opacity="0" stroke="#3397A7" stroke-width="12"/>
       </g>
     </g>
-    <g id="curved_arrow_topright">
+    <g>
       <path d="M217.259,47.674 C272.978,47.415 330.274,76.419 361.801,128.98" fill-opacity="0" stroke="#3397A7" stroke-width="12"/>
       <g>
         <path d="M353.098,133.031 L372.603,152.19 L370.505,124.93 z" fill="#3397A7"/>
         <path d="M353.098,133.031 L372.603,152.19 L370.505,124.93 z" fill-opacity="0" stroke="#3397A7" stroke-width="12"/>
       </g>
-    </g>
-    <g id="curved_arrow_first">
-      <path d="M114.5,353.375 C94.5,338.875 77.5,317.25 70,302.375" fill-opacity="0" stroke="#3397A7" stroke-width="12"/>
-      <g>
-        <g>
-          <path d="M80.489,302.069 L60.8,283.099 L63.161,310.338 z" fill="#3397A7"/>
-          <path d="M80.489,302.069 L60.8,283.099 L63.161,310.338 z" fill-opacity="0" stroke="#3397A7" stroke-width="1"/>
-        </g>
-        <path d="M80.489,302.069 L60.8,283.099 L63.161,310.338 z" fill-opacity="0" stroke="#3397A7" stroke-width="12"/>
-      </g>
-    </g>
-    <g id="curved_arrow_last">
-      <g id="curved_arrow_last_triangle">
-        <g>
-          <path d="M120.188,346.688 L106.375,345.5 L109.125,361.188 z" fill="#0097A7"/>
-          <path d="M120.188,346.688 L106.375,345.5 L109.125,361.188 z" fill-opacity="0" stroke="#FFF8DC" stroke-width="3"/>
-        </g>
-      </g>
-      <path d="M221.459,387.474 C171.75,386.75 140.25,372.625 113.5,352.625" fill-opacity="0" stroke="#3397A7" stroke-width="12" id="curved_arrow_last_line"/>
     </g>
   </g>
   <g id="Inner_circle">
