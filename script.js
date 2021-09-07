@@ -21,9 +21,17 @@ const resetArrowColour = () => {
         elem => {elem.children[0].setAttribute("fill", "#3397A7")});
 };
 
+// Close all overlay panels when any one of them is called
+const closeOverlays = () => {
+    Array.prototype.map.call(document.getElementsByClassName("overlayPanel"), elemToClose => {
+        elemToClose.style.display="none";
+        recolorSelecter(document.getElementById("startHereid"), closed=true);
+    });
+};
+
 const showBox = (index) => {
     // Change which element is displayed in the side panel
-    // Also changes the colours of the numbered circles to give the user
+    // Also changes the colours of arrows to give a
     // a visual cue of how the two are related
     const selectElem = document.getElementById('selecter'+index);
     const sidePanelElem = document.getElementById('sidePanel'+index);
@@ -52,7 +60,7 @@ const updateWindowSize = () => {
 updateWindowSize();
 window.addEventListener('resize', updateWindowSize);
 
-// Add event listeners to the numbered circles and reset button
+// Add event listeners to the arrows and key button
 Array.prototype.map.call(document.getElementsByClassName("selecter"), (elem, index) => {
     const selecterNum = elem.id.split('selecter')[1];
     elem.addEventListener("click",() => {
@@ -60,10 +68,11 @@ Array.prototype.map.call(document.getElementsByClassName("selecter"), (elem, ind
     });
 });
 
-//Add event listener for help button
+//Add event listener for start button
 const addStartHereListener = () => {
     const elem = document.getElementById("startHereid");
     elem.addEventListener("click", event => {
+        closeOverlays();
         document.getElementById("instructions").style.display="flex";
         recolorSelecter(elem);
     });
@@ -83,8 +92,11 @@ Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), e
     elem.addEventListener("touchstart", event => eventAction(event, "flex"), {passive:true});
 });
 
+//Add event listeners for the side panel elements to pop up the defintions panels
+//Similar to what happens when you click on the icons in the central registry circle
 Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem => {
     elem.addEventListener("click", event => {
+        closeOverlays();
         let panelItem = elem.id.split('panelSel')[1];
         if (panelItem.startsWith("Side") | panelItem.startsWith("RtSide")) {
             panelItem = panelItem.split("Side")[1];
@@ -94,9 +106,9 @@ Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem 
     });
 });
 
-//The close button on legend popups. Enables user to close help box.
-// Also gives the user a way out if they
-// slide their mouse or finger off popup elements before letting go
+//The close button in the corner of each overlay panel
+//Works by closing the parent element in the DOM.
+//Changes the colour of the button if it's the start overlay
 Array.prototype.map.call(document.getElementsByClassName("closeBtn"), elem => {
     elem.addEventListener("click", event => {
         elem.parentElement.style.display = "none";
