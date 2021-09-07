@@ -133,7 +133,7 @@ h1{
     margin: auto;
 }
 
-.diagram img{
+.diagram .cycleImage{
     width: var(--diagSize);
     height: var(--diagSize);
 }
@@ -308,7 +308,7 @@ h1{
     padding: calc(2 * var(--units));
     padding-left: calc(2 * var(--units));
     border-radius: 0.7em;
-    font-size: calc(4 * var(--units));
+    font-size: calc(3 * var(--units));
     z-index: 10;
 }
 
@@ -317,12 +317,11 @@ h1{
 }
 
 .legendPopLogo{
-    width: fit-content;
-    height: fit-content;
+    width: calc(8 * var(--units));
 }
 
 .legendPopLogo img{
-    width: calc(6 * var(--units));
+    width: calc(8 * var(--units));
     height: auto;
 }
 
@@ -334,10 +333,6 @@ h1{
 #legendPopFunder{
     top: 18%;
     left: 5%;
-}
-
-#legendPopFunder img{
-    width: calc(5 * var(--unts));
 }
 
 #legPopSelInst1{
@@ -357,7 +352,7 @@ h1{
 
 #legendPopInst2{
     top: 48%;
-    left: 24%;
+    left: 19%;
 }
 
 #legPopSelPlatform{
@@ -370,12 +365,20 @@ h1{
     left: 15%;
 }
 
-#legendPopPlatform .legendPopLabel, #legendPopInst1 .legendPopLabel, #legendPopInst2 .legendPopLabel{
-    font-size: calc(2.5 * var(--units));
+.inline{
+    display: inline-block;
 }
 
 #legendPopInst1 .legendPopLabel, #legendPopInst2 .legendPopLabel{
-    line-height: calc(8 * var(--units));
+    line-height: calc(7 * var(--units));
+}
+
+#legendPopInst1 .legendPopLogo, #legendPopInst2 .legendPopLogo{
+    width: calc(6 * var(--units));
+}
+
+#legendPopInst1 .legendPopLogo img, #legendPopInst2 .legendPopLogo img{
+    width: calc(6 * var(--units));
 }
 
 #legPopSelXref{
@@ -390,10 +393,6 @@ h1{
     left: 40%;
     width: 6%;
     height: 8%;
-}
-
-#legendPopXref .legendPopLogo{
-    width: calc(6 * var(--units));
 }
 
 #panelSelDatacite{
@@ -498,7 +497,7 @@ h1{
     flex-basis: 100%;
     display: flex;
     align-items:flex-start;
-    gap: calc(4 * var(--sideBoxUnits));
+    gap: calc(3 * var(--sideBoxUnits));
 }
 
 .sidePanelTitle{
@@ -562,8 +561,8 @@ h1{
     flex-basis: 10%;
 }
 
-#outputCell{
-    height: calc(12 * var(--sideBoxUnits));
+.outputCell{
+    height: calc(8 * var(--sideBoxUnits));
 }
 
 .legendCellLeft img{
@@ -574,6 +573,11 @@ h1{
 
 .legendCellRight{
     flex-basis: calc(90% - (0.7 * var(--sideBoxUnits)));
+}
+
+.outputLabelCell{
+    display: flex;
+    align-items: center;
 }
 
 .logos{
@@ -664,6 +668,9 @@ ol{
     }
     .instrucHeader{
     font-size: calc(2.5 * var(--units));
+    }
+    .legendPop{
+        font-size: calc(2 * var(--units));
     }
 }
 

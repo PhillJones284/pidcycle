@@ -1,16 +1,24 @@
 const selectorColor = getComputedStyle(document.documentElement).getPropertyValue("--selectorColor");
 
+// change the colour of buttons to show active / inactive status
 const recolorSelecter = (elem, closed = false) => {
-    // change the colour of buttons to show active / inactive status
     if (closed) {
         elem.style.borderColor=selectorColor;
         elem.style.backgroundColor="white";
         elem.style.color=selectorColor;
     } else {
-    elem.style.color="white";
-    elem.style.backgroundColor=selectorColor;
-    elem.style.borderColor="white";
+        elem.style.color="white";
+        elem.style.backgroundColor=selectorColor;
+        elem.style.borderColor="white";
     }
+};
+
+// reset colour of the selecter arrows
+const resetArrowColour = () => {
+    Array.prototype.map.call(document.getElementsByClassName("innerArrow"),
+        elem => {elem.children[0].setAttribute("fill", "#47CCCC")});
+    Array.prototype.map.call(document.getElementsByClassName("outerArrow"),
+        elem => {elem.children[0].setAttribute("fill", "#3397A7")});
 };
 
 const showBox = (index) => {
@@ -22,9 +30,15 @@ const showBox = (index) => {
     Array.prototype.map.call(document.getElementsByClassName("sidePanel"),
         elem => elem.style.display="none");
     sidePanelElem.style.display="flex";
-    Array.prototype.map.call(document.getElementsByClassName("selecter"),
-        elem => recolorSelecter(elem, closed=true));
-    recolorSelecter(selectElem);
+    if (index == 0){
+        recolorSelecter(selectElem);
+        resetArrowColour();
+    } else {
+        recolorSelecter(document.getElementById("selecter0"), closed = true);
+        // Deal with the svg based colours
+        resetArrowColour();
+        selectElem.children[0].setAttribute("fill", "#BD3636");
+    }
 };
 
 // Redefine window height for compatibility across mobile devices
@@ -40,8 +54,9 @@ window.addEventListener('resize', updateWindowSize);
 
 // Add event listeners to the numbered circles and reset button
 Array.prototype.map.call(document.getElementsByClassName("selecter"), (elem, index) => {
+    const selecterNum = elem.id.split('selecter')[1];
     elem.addEventListener("click",() => {
-        showBox(index);
+        showBox(selecterNum);
     });
 });
 
@@ -70,8 +85,8 @@ Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), e
 
 Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem => {
     elem.addEventListener("click", event => {
-        const panelItem = elem.id.split('panelSel')[1];
-        if (panelItem.startsWith("Side")) {
+        let panelItem = elem.id.split('panelSel')[1];
+        if (panelItem.startsWith("Side") | panelItem.startsWith("RtSide")) {
             panelItem = panelItem.split("Side")[1];
         }
         const panelElem = 'panel'+panelItem;
@@ -85,6 +100,9 @@ Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem 
 Array.prototype.map.call(document.getElementsByClassName("closeBtn"), elem => {
     elem.addEventListener("click", event => {
         elem.parentElement.style.display = "none";
+        if (elem.id == 'closeBtnInstructions'){
+            recolorSelecter(document.getElementById("startHereid"), closed=true);
+        }
     });
 });
 
