@@ -485,7 +485,7 @@ h1{
     margin-top: 2%;
     margin-right: 2%;
     background-color: white;
-    font-size: calc(4.5 * var(--sideBoxUnits));
+    font-size: calc(4 * var(--sideBoxUnits));
     z-index: 2;
 }
 
