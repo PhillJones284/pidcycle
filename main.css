@@ -85,7 +85,7 @@ h1{
     margin: auto;
 }
 
-.bigButtons{
+button{
     position: absolute;
     top: calc(2 * var(--units));
     padding: 0.5%;
@@ -210,75 +210,8 @@ h1{
     flex-basis: calc(85% - (0.8*var(--units)));
 }
 
-.roundButtons{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(3.5 * var(--units));
-    height: 8%;
-    width: 8%;
-    border-width: calc(0.8 * var(--units));
-    border-color: var(--selectorColor);
-    border-style: solid;
-    border-radius: 50%;
-    z-index: 2;
-    background-color: white;
-    color: var(--selectorColor);
-}
-
 .selecter:hover{
     cursor: pointer;
-}
-
-#selecter1{
-    top: 64%;
-    left: 21%;
-}
-
-#selecter2{
-    top: 54%;
-    left: 27%;
-}
-
-#selecter3{
-    top: 38%;
-    left: 22%;
-}
-
-#selecter4{
-    top: 27%;
-    left: 38%;
-}
-
-#selecter5{
-    top: 24%;
-    left: 54%;
-}
-
-#selecter6{
-    top: 21.5%;
-    left: 68%;
-}
-
-#selecter7{
-    top: 38%;
-    left: 65%;
-}
-
-#selecter8{
-    top: 54%;
-    left: 70%;
-}
-
-#selecter9{
-    top: 66%;
-    left: 51.5%;
-}
-
-#selecter10{
-    top: 86.7%;
-    left: 27%;
 }
 
 .outerLegendPopSelecter{
@@ -462,13 +395,14 @@ h1{
     right: calc(0.8 * var(--units));
     top: calc(0.8 * var(--units));
     border-width: calc(0.5 * var(--units));
-    border-color: black;
+    border-color: var(--selectorColor);
+    color: var(--selectorColor);
     border-style: solid;
     border-radius: calc(0.8 * var(--units));
     font-size: calc(2.5 * var(--units));
     text-align: center;
     padding: calc(0.16 * var(--units)) calc(0.2 * var(--units));
-    background-color: rgb(200, 200, 200);
+    background-color: #E2E2E2;
 }
 
 .closeBtn:hover{
@@ -655,11 +589,7 @@ ol{
 }
 
 @media (min-aspect-ratio:7/10) and (max-aspect-ratio:10/9){
-    .roundButtons{
-        border-width: calc(0.65 * var(--units));
-        font-size: calc(3 * var(--units));
-    }
-    .bigButtons{
+    button{
         font-size: calc(3 * var(--units));
     }
     #instructions{
