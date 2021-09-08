@@ -1,5 +1,20 @@
 const selectorColor = getComputedStyle(document.documentElement).getPropertyValue("--selectorColor");
 
+// Redefine window height for compatibility across mobile devices
+// Enables dynamic resizing when toggle scrolling the address bar
+const updateWindowSize = () => {
+    const vh = window.innerHeight * 0.01;
+    const vw = window.innerWidth * 0.01;
+    document.documentElement.style.setProperty('--vh', vh+'px');
+    document.documentElement.style.setProperty('--vw', vw+'px');
+};
+updateWindowSize();
+window.addEventListener('resize', updateWindowSize);
+
+Array.prototype.map.call(document.getElementsByClassName("content"), elem => {
+    elem.style.display = "block";
+});
+
 // change the colour of buttons to show active / inactive status
 const recolorSelecter = (elem, closed = false) => {
     if (closed) {
@@ -49,17 +64,6 @@ const showBox = (index) => {
     }
 };
 
-// Redefine window height for compatibility across mobile devices
-// Enables dynamic resizing when toggle scrolling the address bar
-const updateWindowSize = () => {
-    const vh = window.innerHeight * 0.01;
-    const vw = window.innerWidth * 0.01;
-    document.documentElement.style.setProperty('--vh', vh+'px');
-    document.documentElement.style.setProperty('--vw', vw+'px');
-};
-updateWindowSize();
-window.addEventListener('resize', updateWindowSize);
-
 // Add event listeners to the arrows and key button
 Array.prototype.map.call(document.getElementsByClassName("selecter"), (elem, index) => {
     const selecterNum = elem.id.split('selecter')[1];
@@ -98,7 +102,7 @@ Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem 
     elem.addEventListener("click", event => {
         closeOverlays();
         let panelItem = elem.id.split('panelSel')[1];
-        if (panelItem.startsWith("Side") | panelItem.startsWith("RtSide")) {
+        if (panelItem.startsWith("Key") | panelItem.startsWith("Info")) {
             panelItem = panelItem.split("Side")[1];
         }
         const panelElem = 'panel'+panelItem;
