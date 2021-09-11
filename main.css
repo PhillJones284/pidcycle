@@ -586,6 +586,10 @@ ol{
     :root{
         --sideBoxUnits: calc(0.015 * var(--sideBoxWidth));
     }
+    /*.sidePanel{
+        font-size: calc(5 * var(--sideBoxUnits));
+    }*/
+
 }
 
 @media (min-aspect-ratio:7/10) and (max-aspect-ratio:10/9){

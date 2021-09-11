@@ -1,4 +1,5 @@
 const selectorColor = getComputedStyle(document.documentElement).getPropertyValue("--selectorColor");
+let whichPanel = 0;
 
 // Redefine window height for compatibility across mobile devices
 // Enables dynamic resizing when toggle scrolling the address bar
@@ -69,6 +70,7 @@ Array.prototype.map.call(document.getElementsByClassName("selecter"), (elem, ind
     const selecterNum = elem.id.split('selecter')[1];
     elem.addEventListener("click",() => {
         showBox(selecterNum);
+        whichPanel = selecterNum;
     });
 });
 
@@ -131,6 +133,7 @@ Array.prototype.map.call(document.getElementsByClassName("sidePanelLeftArrow"), 
         targetNumber = index;
     }
     elem.addEventListener("click",()=>{
+        whichPanel = targetNumber;
         showBox(targetNumber);
     });
 });
@@ -144,6 +147,23 @@ Array.prototype.map.call(document.getElementsByClassName("sidePanelRightArrow"),
         targetNumber = index+2;
     }
     elem.addEventListener("click",()=>{
+        whichPanel = targetNumber;
+        console.log(whichPanel)
         showBox(targetNumber);
     });
 });
+
+document.onkeydown = (e) => {
+    if(e.code == "ArrowRight"){
+        ++whichPanel
+        if (whichPanel == 11) {
+            whichPanel = 1;
+        }
+    } else if(e.code == "ArrowLeft"){
+        --whichPanel
+        if (whichPanel < 1){
+            whichPanel = 10;
+        }
+    }
+    showBox(whichPanel);
+}
