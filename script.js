@@ -94,10 +94,15 @@ Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), e
         document.getElementById(legElem).style.display = displayValue;
     };
     elem.addEventListener("mousedown", event => eventAction(event, "flex"));
-    elem.addEventListener("mouseup", event => eventAction(event, "none"));
+    //elem.addEventListener("mouseup", event => eventAction(event, "none"));
     elem.addEventListener("touchstart", event => eventAction(event, "flex"), {passive:true});
     elem.addEventListener("touchend", event => eventAction(event, "none"), {passive:true});
 });
+document.onmouseup = () => {
+    Array.prototype.map.call(document.getElementsByClassName("legendPop"), elem => {
+        elem.style.display = "none";
+    });
+}
 
 //Add event listeners for the side panel elements to pop up the defintions panels
 //Similar to what happens when you click on the icons in the central registry circle
@@ -155,13 +160,13 @@ Array.prototype.map.call(document.getElementsByClassName("sidePanelRightArrow"),
 });
 
 //Arrow keys control the side panel the sidepanel
-document.onkeydown = (e) => {
-    if(e.code == "ArrowRight"){
+document.onkeydown = event => {
+    if(event.code == "ArrowRight"){
         ++whichPanel
         if (whichPanel == 11) {
             whichPanel = 1;
         }
-    } else if(e.code == "ArrowLeft"){
+    } else if(event.code == "ArrowLeft"){
         --whichPanel
         if (whichPanel < 1){
             whichPanel = 10;
