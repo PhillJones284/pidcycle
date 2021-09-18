@@ -45,10 +45,10 @@ const closeOverlays = () => {
     });
 };
 
+// Change which element is displayed in the side panel
+// Also changes the colours of arrows to give a
+// a visual cue of how the two are related
 const showBox = (index) => {
-    // Change which element is displayed in the side panel
-    // Also changes the colours of arrows to give a
-    // a visual cue of how the two are related
     const selectElem = document.getElementById('selecter'+index);
     const sidePanelElem = document.getElementById('sidePanel'+index);
     Array.prototype.map.call(document.getElementsByClassName("sidePanel"),
@@ -96,6 +96,7 @@ Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), e
     elem.addEventListener("mousedown", event => eventAction(event, "flex"));
     elem.addEventListener("mouseup", event => eventAction(event, "none"));
     elem.addEventListener("touchstart", event => eventAction(event, "flex"), {passive:true});
+    elem.addEventListener("touchend", event => eventAction(event, "none"), {passive:true});
 });
 
 //Add event listeners for the side panel elements to pop up the defintions panels
@@ -153,6 +154,7 @@ Array.prototype.map.call(document.getElementsByClassName("sidePanelRightArrow"),
     });
 });
 
+//Arrow keys control the side panel the sidepanel
 document.onkeydown = (e) => {
     if(e.code == "ArrowRight"){
         ++whichPanel
