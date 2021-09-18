@@ -210,6 +210,10 @@ button{
     flex-basis: calc(85% - (0.8*var(--units)));
 }
 
+.guideTextContainer2{
+    flex-basis: calc(70% - (1.6*var(--units)));
+}
+
 .selecter:hover{
     cursor: pointer;
 }
