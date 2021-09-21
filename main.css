@@ -97,6 +97,8 @@ button{
     z-index: 6;
 }
 
+button:focus {outline:0;}
+
 .startHere{
     left: 0;
 }

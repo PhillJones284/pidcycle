@@ -115,9 +115,15 @@
             <p><a href="https://ror.org" target="_blank">Click here</a> to learn more about ROR.</p>
             <div class="closeBtn">X</div>
           </div>
-          <button class="selecter reset" id="selecter0">
-            Key
-          </button>
+          <div class="overlayPanel" id="panelDoi">
+            <div class="overlayRegPanelTitle"><a href="https://doi.org" target="_blank"><img src="img/doi.svg"> </a>
+              &nbsp;&nbsp; <a href="https://doi.org" target="_blank">Digital Object Identifier </a></div>
+            <p>Digital Object Identifiers (DOIs) are persistent identifiers that can be used for a wide variety of outputs (publications, datasets, software, and more) and other entities, such as grants.</p>
+            <p>The International DOI Foundation, a not-for-profit membership organisation, is the governance and management body for the federation of Registration Agencies that provide DOI services and registration, including Crossref and DataCite.</p>
+            <p><a href="http://doi.org" target="_blank"> Click here</a> to learn more about the International DOI Foundation</p>
+            <div class="closeBtn">X</div>
+          </div>
+          <button class="selecter reset" id="selecter0">Key</button>
           <!-- <img src="./img/research_lifecycle.svg"> -->
           <!-- <object type="image/svg+xml" data="./img/research_lifecycle.svg" class="cycleImage"></object> -->
           <!-- SVG START-->
@@ -621,10 +627,10 @@
                 <div class="legendCellRight panelSelecter" id="panelSelKeyRtSideOrcid">
                   &nbsp;= &nbsp;ORCID
                 </div>
-                <div class="legendCellLeft">
+                <div class="legendCellLeft panelSelecter" id="panelSelKeyLtSideDoi">
                   <img src="img/doi.svg">
                 </div>
-                <div class="legendCellRight">
+                <div class="legendCellRight panelSelecter" id="panelSelKeyRtSideDoi">
                   &nbsp;= &nbsp;Digital Object Identifier (DOI)
                 </div>
                 <div class="legendCellLeft panelSelecter" id="panelSelKeyLtSideRaid">
@@ -657,7 +663,7 @@
                 organisations, people</b>, and <b>projects</b> to grant application systems
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo1SideDoi">
               <img src="img/orcid.svg" class="panelSelecter" id="panelSelInfo1SideOrcid">
               <img src="img/ror.svg" class="panelSelecter" id="panelSelInfo1SideRor">
               <img src="img/raid.svg" class="panelSelecter" id="panelSelInfo1SideRaid">
@@ -686,7 +692,7 @@
               PID registries
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo2SideDoi">
               <img src="img/orcid.svg" class="panelSelecter" id="panelSelInfo2SideOrcid">
               <img src="img/ror.svg" class="panelSelecter" id="panelSelInfo2SideRor">
               <img src="img/raid.svg" class="panelSelecter" id="panelSelInfo2SideRaid">
@@ -715,7 +721,7 @@
               <b>Funders</b> register DOIs for new <b>grants</b> and associated metadata
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo3SideDoi">
             </div>
           </div>
           <div class="benefits">
@@ -740,7 +746,7 @@
               <b>organisations</b>
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo4SideDoi">
               <img src="img/orcid.svg" class="panelSelecter" id="panelSelInfo4SideOrcid">
               <img src="img/ror.svg"  class="panelSelecter" id="panelSelInfo4SideRor">
             </div>
@@ -767,7 +773,7 @@
               <b>grants</b>, <b>equipment</b>, <b>people</b>, and <b>organisations</b>
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo5SideDoi">
               <img src="img/orcid.svg" class="panelSelecter" id="panelSelInfo5SideOrcid">
               <img src="img/ror.svg" class="panelSelecter" id="panelSelInfo5SideRor">
               <img src="img/raid.svg" class="panelSelecter" id="panelSelInfo5SideRaid">
@@ -795,7 +801,7 @@
               for <b>institutional</b> affiliations and grant DOIs for <b>funding</b>
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo6SideDoi">
               <img src="img/orcid.svg" class="panelSelecter" id="panelSelInfo6SideOrcid">
               <img src="img/ror.svg" class="panelSelecter" id="panelSelInfo6SideRor">
             </div>
@@ -824,7 +830,7 @@
               and <b>organisations</b> linked to <b>outputs</b>
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo7SideDoi">
               <img src="img/orcid.svg" class="panelSelecter" id="panelSelInfo7SideOrcid">
               <img src="img/ror.svg" class="panelSelecter" id="panelSelInfo7SideRor">
               <img src="img/raid.svg" class="panelSelecter" id="panelSelInfo7SideRaid">
@@ -851,7 +857,7 @@
             <p><b>Publisher</b>/<b>repository</b> registers DOIs for new <b>outputs</b> and populate metadata
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo8SideDoi">
             </div>
           </div>
           <div class="benefits">
@@ -877,7 +883,7 @@
             <p>PID registries send automatic updates of new <b>publications</b> etc. to <b>institutions</b>
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo9SideDoi">
               <img src="img/orcid.svg" class="panelSelecter" id="panelSelInfo9SideOrcid">
             </div>
           </div>
@@ -906,7 +912,7 @@
               systems
             </p>
             <div class="logos">
-              <img src="img/doi.svg">
+              <img src="img/doi.svg" class="panelSelecter" id="panelSelInfo10SideDoi">
               <img src="img/orcid.svg" class="panelSelecter" id="panelSelInfo10SideOrcid">
               <img src="img/ror.svg" class="panelSelecter" id="panelSelInfo10SideRor">
               <img src="img/raid.svg" class="panelSelecter" id="panelSelInfo10SideRaid">
