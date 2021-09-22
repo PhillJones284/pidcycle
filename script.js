@@ -12,6 +12,11 @@ const updateWindowSize = () => {
 updateWindowSize();
 window.addEventListener('resize', updateWindowSize);
 
+// All elements of the class type "content" are orignally set to display:none
+// This is done because the page won't render correctly until after -vh and -vw
+// are defined. However, we need to call this JS file after the page is rendered
+// So we render it with the content set to invisible and then make it visible after
+// it has been properly laid out.
 Array.prototype.map.call(document.getElementsByClassName("content"), elem => {
     elem.style.display = "block";
 });
@@ -37,7 +42,7 @@ const resetArrowColour = () => {
         elem => {elem.children[0].setAttribute("fill", "#3397A7")});
 };
 
-// Close all overlay panels when any one of them is called
+// Close all overlay panels
 const closeOverlays = () => {
     Array.prototype.map.call(document.getElementsByClassName("overlayPanel"), elemToClose => {
         elemToClose.style.display="none";
@@ -84,6 +89,22 @@ const addStartHereListener = () => {
     });
 };
 addStartHereListener();
+
+//Change which side panel is displayed based on arrowkeys and mousewheel
+const changeBox = (event) => {
+    if (event.code == "ArrowRight" | event.code == "ArrowUp" | event.deltaY > 0){
+        ++whichPanel;
+        if (whichPanel == 11) {
+            whichPanel = 1;
+        }
+    } else if (event.code == "ArrowLeft" | event.code == "ArrowDown" | event.deltaY < 0) {
+        --whichPanel;
+        if (whichPanel < 1){
+            whichPanel = 10;
+        }
+    }
+    showBox(whichPanel);
+};
 
 //Add event listeners to the Outer ring icons for funders etc. Works for mouse button down
 // and finger press on mobile
@@ -161,18 +182,11 @@ Array.prototype.map.call(document.getElementsByClassName("sidePanelRightArrow"),
     });
 });
 
-//Arrow keys control the side panel the sidepanel
+//Triggers for keypresses and mouse wheel events
 document.onkeydown = event => {
-    if(event.code == "ArrowRight"){
-        ++whichPanel
-        if (whichPanel == 11) {
-            whichPanel = 1;
-        }
-    } else if(event.code == "ArrowLeft"){
-        --whichPanel
-        if (whichPanel < 1){
-            whichPanel = 10;
-        }
+    if (event.code == "Escape"){
+        closeOverlays();
     }
-    showBox(whichPanel);
+    changeBox(event)
 };
+document.onwheel = event => changeBox(event);
