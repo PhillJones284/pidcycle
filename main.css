@@ -124,8 +124,7 @@ button:focus {outline:0;}
     border: calc(1 * var(--units)) var(--mbGrey) solid;
     background-color: white;
     border-radius: calc(4 * var(--units));
-    padding: calc(4.5 * var(--units));
-    padding-top: calc(2.5 * var(--units));
+    padding: calc(2.5 * var(--units)) calc(4.5 * var(--units));
     z-index: 50;
 }
 
@@ -163,13 +162,13 @@ button:focus {outline:0;}
     color: #218ac5;
 }
 
-#instructions{
-    top: 7%;
+.instructions{
+    top: 3%;
     left: 10%;
     width: 80%;
 }
 
-#instructions img{
+.instructions img{
     height: 90%;
     width: 90%;
 }
@@ -197,7 +196,12 @@ button:focus {outline:0;}
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: calc(0.8 * var(--units));
+    gap: calc(1.4 * var(--units)) calc(0.8 * var(--units));
+}
+
+.guideRow p{
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
 }
 
 .guideImgContainer{
@@ -602,7 +606,7 @@ ol{
     button{
         font-size: calc(3 * var(--units));
     }
-    #instructions{
+    .instructions{
         top: 2%;
         width: 100%;
         left: 0;
