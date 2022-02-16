@@ -17,7 +17,7 @@ window.addEventListener('resize', updateWindowSize);
 // are defined. However, we need to call this JS file after the page is rendered
 // So we render it with the content set to invisible and then make it visible after
 // it has been properly laid out.
-Array.prototype.map.call(document.getElementsByClassName("content"), elem => {
+Array.prototype.forEach.call(document.getElementsByClassName("content"), elem => {
     elem.style.display = "block";
 });
 
@@ -36,15 +36,15 @@ const recolorSelecter = (elem, closed = false) => {
 
 // reset colour of the selecter arrows
 const resetArrowColour = () => {
-    Array.prototype.map.call(document.getElementsByClassName("innerArrow"),
+    Array.prototype.forEach.call(document.getElementsByClassName("innerArrow"),
         elem => {elem.children[0].setAttribute("fill", "#47CCCC")});
-    Array.prototype.map.call(document.getElementsByClassName("outerArrow"),
+    Array.prototype.forEach.call(document.getElementsByClassName("outerArrow"),
         elem => {elem.children[0].setAttribute("fill", "#3397A7")});
 };
 
 // Close all overlay panels
 const closeOverlays = () => {
-    Array.prototype.map.call(document.getElementsByClassName("overlayPanel"), elemToClose => {
+    Array.prototype.forEach.call(document.getElementsByClassName("overlayPanel"), elemToClose => {
         elemToClose.style.display="none";
         recolorSelecter(document.getElementById("startHereid"), closed=true);
     });
@@ -56,7 +56,7 @@ const closeOverlays = () => {
 const showBox = (index) => {
     const selectElem = document.getElementById('selecter'+index);
     const sidePanelElem = document.getElementById('sidePanel'+index);
-    Array.prototype.map.call(document.getElementsByClassName("sidePanel"),
+    Array.prototype.forEach.call(document.getElementsByClassName("sidePanel"),
         elem => elem.style.display="none");
     sidePanelElem.style.display="flex";
     if (index == 0){
@@ -71,7 +71,7 @@ const showBox = (index) => {
 };
 
 // Add event listeners to the arrows and key button
-Array.prototype.map.call(document.getElementsByClassName("selecter"), (elem, index) => {
+Array.prototype.forEach.call(document.getElementsByClassName("selecter"), (elem, index) => {
     const selecterNum = elem.id.split('selecter')[1];
     elem.addEventListener("click",() => {
         showBox(selecterNum);
@@ -108,7 +108,7 @@ const changeBox = (event) => {
 
 //Add event listeners to the Outer ring icons for funders etc. Works for mouse button down
 // and finger press on mobile
-Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), elem => {
+Array.prototype.forEach.call(document.getElementsByClassName("legendPopSelecter"), elem => {
     const eventAction = (event, displayValue) => {
         const legItem = elem.id.split('legPopSel')[1];
         const legElem = 'legendPop'+legItem;
@@ -122,14 +122,14 @@ Array.prototype.map.call(document.getElementsByClassName("legendPopSelecter"), e
 //Adding the mouseup event listener on the document level makes the popups close even when
 //you accidentally slide the pointer out of the active area with the mouse button still pressed
 document.onmouseup = () => {
-    Array.prototype.map.call(document.getElementsByClassName("legendPop"), elem => {
+    Array.prototype.forEach.call(document.getElementsByClassName("legendPop"), elem => {
         elem.style.display = "none";
     });
 };
 
 //Add event listeners for the side panel elements to pop up the defintions panels
 //Similar to what happens when you click on the icons in the central registry circle
-Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem => {
+Array.prototype.forEach.call(document.getElementsByClassName("panelSelecter"), elem => {
     elem.addEventListener("click", event => {
         closeOverlays();
         let panelItem = elem.id.split('panelSel')[1];
@@ -144,7 +144,7 @@ Array.prototype.map.call(document.getElementsByClassName("panelSelecter"), elem 
 //The close button in the corner of each overlay panel
 //Works by closing the parent element in the DOM.
 //Changes the colour of the button if it's the start overlay
-Array.prototype.map.call(document.getElementsByClassName("closeBtn"), elem => {
+Array.prototype.forEach.call(document.getElementsByClassName("closeBtn"), elem => {
     elem.addEventListener("click", event => {
         elem.parentElement.style.display = "none";
         if (elem.id == 'closeBtnInstructions'){
@@ -154,7 +154,7 @@ Array.prototype.map.call(document.getElementsByClassName("closeBtn"), elem => {
 });
 
 //Left arrow in the side panel to move side panel text back one stage
-Array.prototype.map.call(document.getElementsByClassName("sidePanelLeftArrow"), (elem,index) => {
+Array.prototype.forEach.call(document.getElementsByClassName("sidePanelLeftArrow"), (elem,index) => {
     let targetNumber;
     if (index == 0){
         targetNumber = 10;
@@ -168,7 +168,7 @@ Array.prototype.map.call(document.getElementsByClassName("sidePanelLeftArrow"), 
 });
 
 //Right arrow in the side panel to move side panel text forward one stage
-Array.prototype.map.call(document.getElementsByClassName("sidePanelRightArrow"), (elem, index) =>{
+Array.prototype.forEach.call(document.getElementsByClassName("sidePanelRightArrow"), (elem, index) =>{
     let targetNumber;
     if (index == 9){
         targetNumber = 1;
