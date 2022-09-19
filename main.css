@@ -97,6 +97,20 @@ button{
     z-index: 6;
 }
 
+.citeAs{
+    text-align: left;
+    bottom: 0;
+    top: auto;
+    font-size: calc(1.8 * var(--units));
+    border: calc(0.1*var(--units)) var(--mbGrey) solid;
+    color: black;
+}
+
+.citeAs:hover{
+    cursor: pointer;
+    color: rgb(51,93,171);
+}
+
 button:focus {outline:0;}
 
 .startHere{
@@ -617,6 +631,9 @@ ol{
     }
     .legendPop{
         font-size: calc(2 * var(--units));
+    }
+    .citeAs{
+        font-size: calc(1.5 * var(--units));
     }
 }
 
